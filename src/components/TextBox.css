@@ -1,0 +1,58 @@
+.text-box-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  margin-top: 50px; /* Adjust the margin as needed */
+}
+
+.Products {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.Products h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(28, 76, 138); /* Adjust the color as needed */
+  margin: 0;
+  padding: 20px;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  /* Optional: Add background to make text readable */
+}
+
+.text-box {
+  margin: 20px;
+  text-align: center; /* Center text within each .text-box */
+  position: relative; /* Add this to position description absolutely within the box */
+}
+
+.text-box img {
+  width: 390px; /* Adjust the size as needed */
+  height: 350px; /* Adjust the size as needed */
+  object-fit: cover;
+  margin-top: 60px;
+  padding: 10px;
+  border-radius: 40px; /* Add this line for rounded corners */
+}
+
+.product-description {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed for spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px; /* Adjust the font size as needed */
+  color: white; /* Adjust the color as needed */
+  
+  padding: 5px 10px; /* Adjust padding as needed */
+  border-radius: 10px; /* Optional: rounded corners for description background */
+  font-weight: bolder;
+  width: 80%; /* Adjust width as needed */
+  text-align: left; /* Center the text */
+}
