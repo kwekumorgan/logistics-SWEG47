@@ -51,7 +51,7 @@
 .search-button {
   background-color: rgb(28, 76, 138);
   color: white;
-  padding: 12px 16px; /* Increased padding */
+  padding: 18px 12px; /* Increased padding */
   border: none;
   border-radius: 5px;
   cursor: pointer;

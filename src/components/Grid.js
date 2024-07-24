@@ -1,7 +1,7 @@
 import React from 'react';
 import './TextBox.css';
 import p1 from '../Media/p1.jpg';
-import p8 from '../Media/P8.jpg';
+import p12 from '../Media/TRYB2.png';
 import p7 from '../Media/p7.jpg';
 import p4 from '../Media/p4.jpg';
 import p3 from '../Media/p3.jpg';
@@ -11,7 +11,7 @@ const TextBox = () => {
     <div className="text-box-container">
       
       <div className="text-box">
-        <img src={p8} alt="Product 6" />
+        <img src={p12} alt="Product 6" />
         <div className="product-description">Product 6</div>
       </div>
       <div className="text-box">
