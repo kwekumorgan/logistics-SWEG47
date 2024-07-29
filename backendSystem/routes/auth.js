@@ -10,7 +10,7 @@ router.post('/register', async (req, res) => {
     const newCustomer = new Customer({
         username: req.body.username,
         email: req.body.email,
-        password: CryptoJS.AES.encrypt(req.body.password, process.env.SEC_PASS).toString(),
+        password: CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY).toString(),
     });
 
     try {
@@ -34,7 +34,7 @@ router.post('/login', async (req, res) => {
         }
 
         // The password is being checked with the corresponding one in the database, decrypted, and then converted to string with utf8 encoding.
-        const decryptedPassword = CryptoJS.AES.decrypt(customer.password, process.env.SEC_PASS);
+        const decryptedPassword = CryptoJS.AES.decrypt(customer.password, process.env.SECRET_KEY);
         const originalPassword = decryptedPassword.toString(CryptoJS.enc.Utf8);
 
         if (originalPassword !== req.body.password) {
