@@ -58,11 +58,9 @@ router.get('./find/:id', verifyTokenAdmin, async(req,res)=>{
 router.get('./', verifyTokenAdmin, async(req,res)=>{
     // After verification the system will then grant access for admins to get details of users
     try{
-        const  retrieveCustomer = await Customer.find();
+        const  retrieveAll = await Customer.find();
 
-        // Destructure the response to exclude the password when retrieved
-        const {password, ...others} = retrieveCustomer._doc;
-        res.status(200).json(others);
+        res.status(200).json(retrieveAll);
     }
     catch(err){
         res.status(500).json(err)
