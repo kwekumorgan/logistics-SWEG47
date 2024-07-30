@@ -1,29 +1,31 @@
+/* Style for the navbar */
 .ribbon {
-    background-color: rgb(28, 76, 138);
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-end;
-    
-  }
-  
-  .body {
-      font-family: 'Times New Roman', Times, serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-  }
-  .ribbon a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 22px 24px;
-    text-decoration: none;
-    position: relative;
-  }
-  
-  .ribbon a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
+  background-color: rgb(28, 76, 138);
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  height: 20px; /* Optional: Set a height for the ribbon */
+  z-index: 1000; /* Ensure the navbar stays above other content */
+  position: relative;
+}
+
+.ribbon h1 {
+  color: white; /* Set the text color to white */
+  text-align: center; /* Center the text */
+  margin: 0; /* Remove default margin */
+  font-size: small;
+}
+
+.ribbon a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.ribbon a:hover {
+  background-color: #ddd;
+  color: black;
+}
