@@ -1,0 +1,177 @@
+/* Ensure the main content fills the screen */
+.product-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.header {
+  flex-shrink: 0; /* Ensure header doesn't shrink */
+}
+
+.footer {
+  flex-shrink: 0; /* Ensure footer doesn't shrink */
+}
+
+.main_content {
+  display: flex;
+  flex: 1; /* Allow main content to grow and fill available space */
+  width: 100%; /* Full width */
+  margin-top: 30px;
+  box-sizing: border-box;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%; /* Adjust width as needed */
+  box-sizing: border-box;
+  gap: 20px; /* Space between cards */
+}
+
+.card {
+  flex: 1 1 calc(33.33% - 20px); /* Three items per row with space */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0; /* No margin to keep cards touching */
+  box-sizing: border-box;
+  padding: 0; /* No padding */
+  background-color: white; /* Ensure background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+.card_img {
+  width: 100%;
+  height: 250px; /* Set a fixed height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd; /* Optional: Add a border for consistency */
+  border-radius: 15px; /* Curve the edges */
+  overflow: hidden; /* Ensure the image doesn't overflow the container */
+  box-sizing: border-box;
+}
+
+.card_img img {
+  width: 90%; /* Full width */
+  height: 250px; /* Full height */
+  object-fit: cover; /* Ensure the image fills the container without distortion */
+  border-radius: 15px; /* Ensure the image edges are also curved */
+}
+
+.card_header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  color: black;
+  margin: 10px 0; /* Adjust margin as needed */
+  padding: 0 10px; /* Padding inside the card header */
+}
+
+.card_header h2 {
+  font-size: 20px;
+  font-weight: bold; /* Ensure bold text */
+  text-align: left;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.card_header p {
+  font-size: 16px;
+  text-align: left;
+  color: black;
+  margin: 8px 0;
+  white-space: normal; /* Ensure text wraps */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.card_header .price {
+  font-size: 20px;
+  color: #007bff;
+  text-align: left;
+}
+
+.card_header .price span {
+  font-size: 15px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.card:hover .btn {
+  background-color: #007bff  !important;
+  color: #ffffff;
+}
+
+.vertical-text-box {
+  width: 20%; /* Adjust width as needed */
+  background-color: lightgray;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Style for the default button */
+.btn {
+  width: 200px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 35px;
+  background-color: lightgray !important; /* Default black color */
+  color: black; /* Light text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+  overflow: hidden;
+  border: none; /* Ensure no border is affecting the button appearance */
+}
+
+/* Style for the button on hover */
+.btn:hover {
+  background-color: #007bff; /* Change to blue on hover */
+  color: #ffffff; /* Change text color to white on hover */
+}
+
+
+.product-description {
+  font-size: 16px; /* Adjust font size as needed */
+  color: black; /* Ensure text color */
+  word-wrap: break-word; /* Ensure long words break and wrap to the next line */
+  padding: 10px; /* Add padding */
+  margin: 10px 0; /* Add margin */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 10px); /* Two items per row on smaller screens */
+  }
+
+  .product-description {
+    font-size: 14px; /* Smaller font size for mobile view */
+    padding: 8px; /* Adjust padding for smaller screens */
+    margin: 8px 0; /* Adjust margin for smaller screens */
+  }
+
+  .card_header h2 {
+    font-size: 18px; /* Adjust font size for mobile */
+    font-weight: bold; /* Ensure bold text */
+  }
+
+  .card_header p {
+    font-size: 14px; /* Adjust font size for mobile */
+    white-space: normal; /* Ensure text wraps */
+  }
+}

@@ -2,8 +2,8 @@ import React from 'react';
 import './TextBox.css';
 import p1 from '../Media/p1.jpg';
 import p12 from '../Media/TRYB2.png';
-import p7 from '../Media/p7.jpg';
-import p4 from '../Media/p4.jpg';
+import p7 from '../Media/PsSQ.jpg';
+import p4 from '../Media/TRYB.png';
 import p3 from '../Media/p3.jpg';
 
 const TextBox = () => {

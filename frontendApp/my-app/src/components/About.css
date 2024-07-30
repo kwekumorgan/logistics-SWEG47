@@ -1,0 +1,24 @@
+/* AboutPage.css */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f4f4f4; /* Light background color for contrast */
+  }
+  
+  .about-box {
+    background-color: #ffffff; /* White background for the text box */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the text box */
+    max-width: 800px; /* Maximum width of the text box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for visual effect */
+    text-align: center; /* Center text alignment */
+  }
+  
+  .about-box p {
+    margin-bottom: 15px; /* Space between paragraphs */
+    font-size: 16px; /* Font size for readability */
+    color: #333; /* Dark color for text */
+  }
+  

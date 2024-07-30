@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./LoginRegister.css";
 import "./Header.css"; 
@@ -6,6 +6,26 @@ import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 import KashLogo from '../Media/KASHLOGO1.jpg';
 
 const LoginRegister = () => {
+  useEffect(() => {
+    function handleScroll() {
+      const header = document.querySelector('.header');
+      const navbarHeight = document.querySelector('.ribbon').offsetHeight;
+      if (window.scrollY > navbarHeight) {
+        header.style.position = 'fixed';
+        header.style.top = '0';
+      } else {
+        header.style.position = 'relative';
+        header.style.top = '';
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const [action, setAction] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -41,18 +61,18 @@ const LoginRegister = () => {
 
   return (
     <div>
-     <header className="header">
-      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
-      <Link to="/events">Events</Link>
-      <Link to="/inventory">Inventory</Link>
-      <Link to="/categories">Categories</Link>
-      <Link to="/shipping">Shipping</Link>
-      
-      <div className="search-container">
-        <input type="text" className="search-input" placeholder="Search..." />
-        <button className="search-button" onClick={() => alert('Perform search operation')}>Search</button>
-      </div>
-    </header>
+      <header className="header">
+        <img src={KashLogo} height="80" alt="Department Of Computer Science" />
+        <Link to="/">Home</Link>
+      <Link to="/product">Product</Link>
+      <Link to="/Carts">Carts</Link>
+      <Link to="/About">About</Link>
+        
+        <div className="search-container">
+          <input type="text" className="search-input" placeholder="Search..." />
+          <button className="search-button" onClick={() => alert('Perform search operation')}>Search</button>
+        </div>
+      </header>
       <div className={`login-register-wrapper ${action === 'active' ? 'active' : ''}`}>
         <div className='form-box login'>
           <form onSubmit={handleLogin}>

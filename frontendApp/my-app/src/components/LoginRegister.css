@@ -4,16 +4,17 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #fff;
+  background:url(../Media/HANEB.jpg);
+  background-size: cover;
   
 }
 
 .login-register-wrapper .form-box {
   background-color: rgb(28, 76, 138); /* Blue background with some transparency */
   border-radius: 15px;
-  padding: 80px;
+  padding: 50px;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   text-align: center;
   transition: all 0.3s ease;
 }
