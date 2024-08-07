@@ -1,7 +1,7 @@
-
 import { Link } from 'react-router-dom';
 import './Header.css';
 import KashLogo from '../Media/KASHLOGO1.jpg';
+import SearchIcon from '../Media/Search.png';
 import React, { useEffect } from 'react';
 
 const Header = () => {
@@ -24,6 +24,17 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleSearch = () => {
+    alert('Perform search operation');
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <header className="header">
       <img src={KashLogo} height="80" alt="Department Of Computer Science" />
@@ -31,12 +42,19 @@ const Header = () => {
       <Link to="/product">Product</Link>
       <Link to="/Carts">Carts</Link>
       <Link to="/About">About</Link>
-      <Link to="/login"> {/* Update Sign In button to navigate to LoginRegister page */}
-        <button>Sign In</button>
+      <Link to="/login">
+      <button className="sign-in-button">Sign In</button>
       </Link>
       <div className="search-container">
-        <input type="text" className="search-input" placeholder="Search..." />
-        <button className="search-button" onClick={() => alert('Perform search operation')}>Search</button>
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search"
+          onKeyPress={handleKeyPress}
+        />
+        <button className="search-button" onClick={handleSearch}>
+          <img src={SearchIcon} alt="Search" />
+        </button>
       </div>
     </header>
   );

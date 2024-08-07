@@ -4,6 +4,7 @@ import "./LoginRegister.css";
 import "./Header.css"; 
 import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 import KashLogo from '../Media/KASHLOGO1.jpg';
+import SearchIcon from '../Media/Search.png';
 
 const LoginRegister = () => {
   useEffect(() => {
@@ -26,6 +27,15 @@ const LoginRegister = () => {
     };
   }, []);
 
+  const handleSearch = () => {
+    alert('Perform search operation');
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
   const [action, setAction] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -62,17 +72,24 @@ const LoginRegister = () => {
   return (
     <div>
       <header className="header">
-        <img src={KashLogo} height="80" alt="Department Of Computer Science" />
-        <Link to="/">Home</Link>
+      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
+      <Link to="/">Home</Link>
       <Link to="/product">Product</Link>
       <Link to="/Carts">Carts</Link>
       <Link to="/About">About</Link>
-        
-        <div className="search-container">
-          <input type="text" className="search-input" placeholder="Search..." />
-          <button className="search-button" onClick={() => alert('Perform search operation')}>Search</button>
-        </div>
-      </header>
+     
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search"
+          onKeyPress={handleKeyPress}
+        />
+        <button className="search-button" onClick={handleSearch}>
+          <img src={SearchIcon} alt="Search" />
+        </button>
+      </div>
+    </header>
       <div className={`login-register-wrapper ${action === 'active' ? 'active' : ''}`}>
         <div className='form-box login'>
           <form onSubmit={handleLogin}>

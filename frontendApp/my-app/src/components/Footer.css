@@ -1,5 +1,6 @@
 .footer {
-    background-color: rgb(28, 76, 138);
+  background:url(../Media/arno.jpg);
+  background-size: cover;
     color: white;
     padding: 20px;
     display: flex;

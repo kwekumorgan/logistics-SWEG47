@@ -4,12 +4,13 @@ import { useCart } from '../components/CartContext';
 import "./Header.css"; 
 import KashLogo from '../Media/KASHLOGO1.jpg';
 import "./Carts.css"; 
+import SearchIcon from '../Media/Search.png';
 
 const Carts = () => {
   useEffect(() => {
     function handleScroll() {
       const header = document.querySelector('.header');
-      const navbarHeight = document.querySelector('.ribbon')?.offsetHeight || 0;
+      const navbarHeight = document.querySelector('.ribbon').offsetHeight;
       if (window.scrollY > navbarHeight) {
         header.style.position = 'fixed';
         header.style.top = '0';
@@ -20,29 +21,47 @@ const Carts = () => {
     }
 
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleSearch = () => {
+    alert('Perform search operation');
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   const { cart, removeFromCart } = useCart();
 
   return (
     <div className="main_content">
       <header className="header">
-        <img src={KashLogo} height="80" alt="Department Of Computer Science" />
-        <Link to="/">Home</Link>
-        <Link to="/product">Product</Link>
-        <Link to="/carts">Carts</Link>
-        <Link to="/about">About</Link>
-        <Link to="/login">
-          <button>Sign In</button>
-        </Link>
-        <div className="search-container">
-          <input type="text" className="search-input" placeholder="Search..." />
-          <button className="search-button" onClick={() => alert('Perform search operation')}>Search</button>
-        </div>
-      </header>
+      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
+      <Link to="/">Home</Link>
+      <Link to="/product">Product</Link>
+      <Link to="/Carts">Carts</Link>
+      <Link to="/About">About</Link>
+      <Link to="/login">
+      <button className="sign-in-button">Sign In</button>
+      </Link>
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search"
+          onKeyPress={handleKeyPress}
+        />
+        <button className="search-button" onClick={handleSearch}>
+          <img src={SearchIcon} alt="Search" />
+        </button>
+      </div>
+    </header>
 
       <div className="card-container">
         {cart.length === 0 ? (

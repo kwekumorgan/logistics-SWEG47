@@ -1,6 +1,7 @@
 /* Style for the navbar */
 .ribbon {
-  background-color: rgb(28, 76, 138);
+  background:url(../Media/arno.jpg);
+  background-size: cover;
   overflow: hidden;
   display: flex;
   justify-content: center; /* Center the content horizontally */

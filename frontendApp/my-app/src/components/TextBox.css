@@ -1,6 +1,7 @@
 .products-container {
   margin-top: 20px; /* Adjust the margin to leave space for the header */
   text-align: center; /* Center the h1 text */
+  
 }
 
 .products-container h1 {
