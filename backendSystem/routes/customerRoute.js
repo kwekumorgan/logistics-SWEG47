@@ -56,9 +56,13 @@ router.get('./find/:id', verifyTokenAdmin, async(req,res)=>{
 
 // GET ALL USERS (ADMIN ONLY)
 router.get('./', verifyTokenAdmin, async(req,res)=>{
+
+    const query = req.query.new //if you want to use a query 
     // After verification the system will then grant access for admins to get details of users
     try{
-        const  retrieveAll = await Customer.find();
+        // Data to be retrieved gets sorted first. Using a query generates the latest data but only 5
+        // If you want all customer data then you dont have to use a query
+        const  retrieveAll = query? await Customer.find().sort({_id:-1}).limit(5) : await Customer.find();
 
         res.status(200).json(retrieveAll);
     }
@@ -66,5 +70,35 @@ router.get('./', verifyTokenAdmin, async(req,res)=>{
         res.status(500).json(err)
     }
 });
+
+// GET USER STATISTICS 
+
+router.get('./stats',verifyTokenAdmin ,async(req,res)=>{
+   const date = new Date(); // This is an object of the date class to used to get the date for last year as part of the user statistics
+   const lastYear = new Date(date.setFullYear(date.getFullYear()-1));
+
+   try{
+
+    const data = await Customer.aggregate([
+        {$match:{createdAt:{$age:lastYear}}},
+        {
+            $project:{
+                month:{$month: "$createdAt"},
+            }
+        },
+        {
+            $group:{
+                _id: "$month",
+                total :{$sum:1}
+            }
+        }
+    ])
+        res.status(200).json(data);
+   }
+   catch(err){
+    res.status(500).json(err);
+   }
+
+})
 
 module.exports = router;
