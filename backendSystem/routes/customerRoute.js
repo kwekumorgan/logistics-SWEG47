@@ -76,7 +76,7 @@ router.get('./', verifyTokenAdmin, async(req,res)=>{
 router.get('./stats',verifyTokenAdmin ,async(req,res)=>{
    const date = new Date(); // This is an object of the date class to used to get the date for last year as part of the user statistics
    const lastYear = new Date(date.setFullYear(date.getFullYear()-1));
-
+// This will show the total number of user per month
    try{
 
     const data = await Customer.aggregate([
