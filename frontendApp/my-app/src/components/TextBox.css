@@ -30,14 +30,14 @@
   border-radius: 20px; /* Rounded corners */
   overflow: hidden; /* Ensure the image fits perfectly within the border */
   flex: 1 1 calc(20% - 20px); /* Flex basis to allow up to 5 items per row */
-  max-width: 260px; /* Maximum width for .text-box */
-  height: 200px; /* Set a fixed height for the .text-box */
+  max-width: 290px; /* Maximum width for .text-box */
+  height: 205px; /* Set a fixed height for the .text-box */
 }
 
 .text-box img {
   width: 100%; /* Make image fill the width of the .text-box */
   height: 100%; /* Make image fill the height of the .text-box */
-  object-fit: cover; /* Ensure the image covers the entire area */
+  object-fit: calc(); /* Ensure the image covers the entire area */
 }
 
 .product-description {
