@@ -4,9 +4,11 @@ import TextBox from './TextBox';
 import Grid from './Grid';
 import DepartmentEvents from './Events';
 import Header from '../components/Header';
+import './Home.css';
 
 
 const Home = () => {
+  
   return (
     <div>
       <Header />

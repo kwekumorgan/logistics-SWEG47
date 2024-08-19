@@ -2,65 +2,98 @@
 .header {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: #E8E8E8;
   color: black;
-  padding: 7px; /* Increased padding */
-  position: relative; /* Start as relative */
-  width: 100%; /* Ensure the header spans the entire width */
-  z-index: 999; /* Ensure the header stays above other content */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  padding: 7px;
+  position: relative;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header img {
-  height: 66px; /* Increased height */
-  margin-right: 12px; /* Increased margin */
+  height: 66px;
+  margin-right: 12px;
 }
 
-.header button,
 .header a {
-  background-color: white;
+  background-color: #E8E8E8;
   color: rgb(28, 76, 138);
-  padding: 4px 8px; /* Increased padding */
-  margin-right: 10px; /* Increased margin */
+  padding: 4px 8px;
+  margin-right: 10px;
   text-decoration: none;
   cursor: pointer;
   border-radius: 10px;
   text-align: center;
-  font-size: 14px; /* Increased font size */
+  font-size: 15px;
 }
 
-.header button:hover,
 .header a:hover {
-  background-color: white;
+  background-color: #E8E8E8;
   color: rgb(28, 76, 138);
 }
 
-.header button {
+/* Style for the Sign In button */
+.sign-in-button {
+  background-color: #E8E8E8;
+  color: rgb(28, 76, 138);
+  padding: 4px 8px;
+  margin-right: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
   border: 1px solid rgb(28, 76, 138);
 }
 
+.sign-in-button:hover {
+  background-color: #E8E8E8;
+  color: rgb(28, 76, 138);
+}
+
+/* Style for the search container */
 .search-container {
   margin-left: auto;
   display: flex;
   align-items: center;
+  width: 40%; /* Adjust this value to make the search bar longer or shorter */
+  position: relative;
 }
 
 .search-input {
-  padding: 4px; /* Increased padding */
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-right: 10px; /* Increased margin */
-  font-size: small; /* Increased font size */
+  width: 100%;
+  padding: 8px; /* Adjust padding as needed */
+  border: 1px solid #ddd; /* Default border color */
+  border-radius: 25px; /* Rounded corners */
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  padding-right: 40px; /* Add space for the search button */
+  transition: border-color 0.3s ease; /* Smooth transition for border color change */
+}
+
+/* Change border color on focus */
+.search-input:focus {
+  border-color: rgb(28, 76, 138); /* Border color when focused */
+  outline: none; /* Remove default outline */
 }
 
 .search-button {
-  background-color: rgb(28, 76, 138);
-  color: white;
-  padding: 18px 12px; /* Increased padding */
+  position: absolute;
+  right: 0; /* Adjust to fit inside the input */
+  background: none;
   border: none;
-  border-radius: 5px;
+  padding: 0;
   cursor: pointer;
-  font-size: large; /* Increased font size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure it fills the input's height */
+}
+
+.search-button img {
+  width: 20px; /* Adjust the size of the search icon */
+  height: 20px;
 }
 
 /* Add padding to the top of the body content to avoid it being hidden behind the fixed header */

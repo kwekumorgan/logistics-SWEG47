@@ -3,8 +3,19 @@ import { Link } from 'react-router-dom';
 import './Footer.css'; 
 import facebookIcon from '../Media/fbook.jpg';
 import instagramIcon from '../Media/instagram.jpg';
+import SearchIcon from '../Media/Search.png';
 
 const Footer = () => {
+  const handleSearch = () => {
+    alert('Perform search operation');
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="social-icons">
@@ -24,17 +35,24 @@ const Footer = () => {
             dcs@ug.edu.gh
           </p>
         </div>
-        <div className="search-container">
-          <input type="text" className="search-input" placeholder="Search..." />
-          <button className="search-button" onClick={() => alert('Perform search operation')}>Search</button>
+        <div className="footer-search-container">
+          <input
+            type="text"
+            className="footer-search-input"
+            placeholder="Search"
+            onKeyPress={handleKeyPress}
+          />
+          <button className="footer-search-button" onClick={handleSearch}>
+            <img src={SearchIcon} alt="Search" />
+          </button>
         </div>
       </div>
       <div className="footer-links">
         <Link to="/about">About</Link>
-        <Link to="/products">Products</Link>
+       
         <Link to="/contact">Contact</Link>
       </div>
-      &copy; 2023 Department of Computer Science, University of Ghana
+      &copy; 2023, Kash Logistics
     </footer>
   );
 };

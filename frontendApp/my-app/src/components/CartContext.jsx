@@ -12,6 +12,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (productId) => {
+    console.log('Removing product with ID:', productId);
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
 
