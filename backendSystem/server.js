@@ -1,15 +1,16 @@
 // This is the server for the app. Any documentation at the server side will be commented.
 // Connecting to the express server
+
+require('dotenv').config(); // configuration for the dotenv in order to use with the server.
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');// Connecting to the mongoose server
-const dotenv = require('dotenv');
 
 // Importing all routes to be used in the main application
 const customerRoutes = require('./routes/customerRoute');
 const authRoutes = require('./routes/auth')
 
-dotenv.config(); // configuration for the dotenv in order to use with the server.
+
 
 
 mongoose
@@ -18,6 +19,8 @@ mongoose
 .catch((err)=>{
     console.log(err)// throws an error for wrong database credentials
 })
+
+console.log('Secret Key:', process.env.SECRET_KEY);
 
 
 
