@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const products = require('../models/products');
 const Products = require('../models/products');
 const {verifyToken ,verifyTokenAndAuthorization,verifyTokenAdmin,} = require('./VerifyToken');
 
@@ -13,7 +12,7 @@ router.post('./', verifyTokenAdmin,async(req,res)=>{
         const savedProducts = await newProduct.save();
         res.status(200).json(savedProducts);
 
-    } catch(err){
+    } catch(err){  
         res.status(500).json(err);
     }
 });
@@ -53,10 +52,7 @@ router.get('./find/:id', async(req,res)=>{
     // After verification the system will then grant access for admins to get details of users
     try{
         const  retrieveProducts = await Products.findById(req.params.id);
-
-        // Destructure the response to exclude the password when retrieved
-        const {password, ...others} = retrieveProducts._doc;
-        res.status(200).json(others);
+        res.status(200).json(retrieveProducts);
     }
     catch(err){
         res.status(500).json(err)
@@ -84,7 +80,7 @@ router.get('./', async(req,res)=>{
             product = await Products.find();
         };
 
-        
+
         // Data to be retrieved gets sorted first. Using a query generates the latest data but only 5
         // If you want all customer data then you dont have to use a query
         const  retrieveAll = query? await Products.find().sort({_id:-1}).limit(5) : await Customer.find();
