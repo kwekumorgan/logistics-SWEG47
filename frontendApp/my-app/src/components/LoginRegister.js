@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
-import { login, register } from '../Utility/axios'; // Import the API functions
+import { login, register } from '../Utility/axios'; 
 import "./LoginRegister.css";
 
 const LoginRegister = () => {
@@ -10,59 +10,55 @@ const LoginRegister = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); // State to store error messages
+  const [error, setError] = useState('');
 
-  // Handle switching to registration form
   const registerLink = (e) => {
     e.preventDefault();
     setAction('active');
-    setError(''); // Clear error message when switching forms
   };
 
-  // Handle switching to login form
   const loginLink = (e) => {
     e.preventDefault();
     setAction('');
-    setError(''); // Clear error message when switching forms
   };
 
-  // Handle login form submission
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      // Perform login API call
-      const data = await login(username, password);
-      console.log('Login successful:', data);
-
-      // Clear form and navigate after successful login
-      setUsername('');
-      setPassword('');
-      setError(''); // Clear any existing error messages
-      navigate('/'); // Redirect to home page after login
-    } catch (error) {
-      console.error('Error logging in:', error);
-      // Set error message based on the response
-      setError(error);
+  const triggerShakeAnimation = () => {
+    const errorElement = document.querySelector('.error-message');
+    if (errorElement) {
+      errorElement.classList.remove('shake');
+      void errorElement.offsetWidth; // Trigger reflow to restart the animation
+      errorElement.classList.add('shake');
     }
   };
 
-  // Handle registration form submission
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const data = await login(username, password);
+      console.log('Login successful:', data);
+      setUsername('');
+      setPassword('');
+      setError('');
+      navigate('/');
+    } catch (error) {
+      setError(error); // Set error message directly from axios call
+      triggerShakeAnimation(); // Trigger shake animation for the error message
+    }
+  };
+
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      // Perform registration API call
       const data = await register(username, email, password);
       console.log('Registration successful:', data);
-
-      // Clear form and navigate after successful registration
       setUsername('');
       setEmail('');
       setPassword('');
-      setError(''); // Clear any existing error messages
-      navigate('/'); // Redirect to home page after registration
+      setError('');
+      navigate('/');
     } catch (error) {
-      console.error('Error registering:', error);
-      setError(error); // Display error message
+      setError(error); // Set error message directly from axios call
+      triggerShakeAnimation(); // Trigger shake animation for the error message
     }
   };
 
@@ -96,7 +92,7 @@ const LoginRegister = () => {
             <button type="button" className="link-button">Forgot password?</button>
           </div>
           <button type="submit">Login</button>
-          {error && <p className="error-message">{error}</p>} {/* Display error message */}
+          {error && <p className="error-message shake">{error}</p>} {/* Display error message */}
           <div className="register-link">
             <p>Don't have an account? <button type="button" className="link-button" onClick={registerLink}>Register</button></p>
           </div>
@@ -139,7 +135,7 @@ const LoginRegister = () => {
             <label><input type="checkbox" /> I agree to the terms & conditions</label>
           </div>
           <button type="submit">Register</button>
-          {error && <p className="error-message">{error}</p>} {/* Display error message */}
+          {error && <p className="error-message shake">{error}</p>} {/* Display error message */}
           <div className="register-link">
             <p>Already have an account? <button type="button" className="link-button" onClick={loginLink}>Login</button></p>
           </div>

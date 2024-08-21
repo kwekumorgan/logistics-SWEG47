@@ -29,7 +29,7 @@ const product_card = [
         description: "A very good and free seal serving many purposes as all",
         price: 150,
         currency: "GHC",
-        thumb: require('../Media/p1.jpg')
+        thumb: require('../Media/1849_900x.png')
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ const product_card = [
         description: "A very good and free seal serving many purposes as all",
         price: 150,
         currency: "GHC",
-        thumb: require('../Media/TRYB.png')
+        thumb: require('../Media/1458_900x.png')
     },
     {
         id: 6,
