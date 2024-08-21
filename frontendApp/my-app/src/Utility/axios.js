@@ -6,13 +6,13 @@ import axios from "axios";
 
 export const login = async(username , password)=>{
     try{
-        const response = await axios.post("http://localhost:7000/api/auth/login",{
+        const response = await axios.post("http://localhost:7000/api/auth/login",{ // Backend route for login 
             username,
             password,
         });
         return response.data;
     }catch(error){
-        console.error('login error:',error);
+        console.error('login error:',error); // throws an error for unsuccessful operation 
         
 
     }
@@ -22,7 +22,7 @@ export const login = async(username , password)=>{
 
 export const register = async(username , email , password)=>{
     try{
-        const response = await axios.post("http://localhost:7000/api/auth/register", {
+        const response = await axios.post("http://localhost:7000/api/auth/register", { // Backend route for registration  
             username,
             email,
             password,
