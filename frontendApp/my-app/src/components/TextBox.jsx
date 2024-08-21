@@ -1,6 +1,6 @@
 import React from 'react';
 import './TextBox.css';
-import product_card from '../components/product_card'; // Ensure correct path
+import product_card from '../components/product_card'; // Import the product data
 import { useNavigate } from 'react-router-dom';
 
 const TextBox = () => {

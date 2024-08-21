@@ -9,7 +9,7 @@ export const login = async (username, password) => {
     });
     return response.data; // return the response data from the backend
   } catch (error) {
-    throw error.response?.data?.message || 'Login failed'; // throw error with a meaningful message
+    throw error.response?.data?.message || 'Incorrect Username or Password'; // throw error with a meaningful message
   }
 };
 
