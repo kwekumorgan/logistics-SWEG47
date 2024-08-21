@@ -80,7 +80,7 @@ const product_card = [
         thumb: require('../Media/prd1.jpg')
     },
     {
-        id: 10,
+        id: 11,
         product_name: "Multipurpose security seals",
         description: "A very good and free seal serving many purposes as all",
         price: 150,
@@ -88,7 +88,7 @@ const product_card = [
         thumb: require('../Media/p6.jpg')
     },
     {
-        id: 10,
+        id: 12,
         product_name: "Multipurpose security seals",
         description: "A very good and free seal serving many purposes as all",
         price: 150,

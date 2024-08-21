@@ -41,20 +41,20 @@ const Product = () => {
   const { addToCart } = useCart();
 
   const handleAddToCart = (item) => {
-    console.log('Adding to cart:', item); // Debug log
+    console.log('Adding to cart:', item);
     addToCart(item);
   };
 
   const listItems = product_card.map((item) =>
-    <div className="card" key={item.id}>
-      <div className="card_img">
+    <div className="product-card" key={item.id}>
+      <div className="product-card-img">
         <img src={item.thumb} alt={item.product_name} />
       </div>
-      <div className="card_header">
+      <div className="product-card-header">
         <h2>{item.product_name}</h2>
         <p>{item.description}</p>
         <p className="price">{item.price}<span>{item.currency}</span></p>
-        <div className="btn" onClick={() => handleAddToCart(item)}>Add to cart</div>
+        <div className="product-btn" onClick={() => handleAddToCart(item)}>Add to cart</div>
       </div>
     </div>
   );
@@ -62,34 +62,36 @@ const Product = () => {
   return (
     <div className="product-page">
       <header className="header">
-      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
-      <Link to="/">Home</Link>
-      <Link to="/product">Product</Link>
-      <Link to="/Carts">Carts</Link>
-      <Link to="/About">About</Link>
-      <Link to="/login">
-      <button className="sign-in-button">Sign In</button>
-      </Link>
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search"
-          onKeyPress={handleKeyPress}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          <img src={SearchIcon} alt="Search" />
-        </button>
-      </div>
-    </header>
-      <div className="main_content">
+        <img src={KashLogo} height="80" alt="Department Of Computer Science" />
+        <Link to="/">Home</Link>
+        <Link to="/product">Product</Link>
+        <Link to="/Carts">Carts</Link>
+        <Link to="/About">About</Link>
+        <Link to="/login">
+          <button className="sign-in-button">Sign In</button>
+        </Link>
+        <div className="search-container">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search"
+            onKeyPress={handleKeyPress}
+          />
+          <button className="search-button" onClick={handleSearch}>
+            <img src={SearchIcon} alt="Search" />
+          </button>
+        </div>
+      </header>
+      <div className="main-content">
         <div className="card-container">
           {listItems}
         </div>
         <div className="vertical-text-box">
-          {/* Content for the vertical text box */}
+          <h2>Vertical Text Box</h2>
+          <p>Some text here...</p>
         </div>
       </div>
+      
     </div>
   );
 }
