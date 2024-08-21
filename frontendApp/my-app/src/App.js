@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Product from './components/Product';
+import ProductDetailPage from './components/ProductDetailPage'; // Rename this for clarity
 import Payment from './components/Payment';
 import About from './components/About';
 import Events from './components/Events';
@@ -22,7 +22,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} /> {/* Use the proper component name */}
           <Route path="/payment" element={<Payment />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events />} />

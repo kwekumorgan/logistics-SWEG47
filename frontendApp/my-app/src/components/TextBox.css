@@ -20,36 +20,115 @@
   align-items: center;
   margin-top: 20px; /* Adjust the margin if necessary */
   gap: 0px;
+  
 }
 
 .text-box {
-  margin: 10px; /* Reduced margin to fit more items in the row */
-  text-align: center; /* Center text within each .text-box */
-  position: relative; /* Add this to position description absolutely within the box */
-  border: 3px solid black; /* Add a black border */
-  border-radius: 20px; /* Rounded corners */
-  overflow: hidden; /* Ensure the image fits perfectly within the border */
-  flex: 1 1 calc(20% - 20px); /* Flex basis to allow up to 5 items per row */
-  max-width: 290px; /* Maximum width for .text-box */
-  height: 205px; /* Set a fixed height for the .text-box */
+  margin: 8px; 
+  text-align: center; 
+  position: relative;
+  border-radius: 12px;
+  
+  overflow: hidden; 
+  flex: 1 1 calc(20% - 20px); 
+  max-width: 290px; 
+  height: auto; /* Change this to auto to allow the box to adjust height based on content */
 }
 
+
 .text-box img {
-  width: 100%; /* Make image fill the width of the .text-box */
-  height: 100%; /* Make image fill the height of the .text-box */
+  width: 100%; 
+  height: 205px; /* Keep the image height fixed as before */
   object-fit: calc(); /* Ensure the image covers the entire area */
+  border-radius: 15px; 
+}
+.text-box img:hover {
+  transform: scale(1.05); /* Slightly scale up the product */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to make it pop out */
+}
+
+.product-description, .product-price {
+  justify-content: left;
+  text-align: left;
+  margin-top: 10px; 
+
+  color: #333; 
 }
 
 .product-description {
-  position: absolute;
-  bottom: 10px; /* Adjust as needed for spacing */
+  font-size: 20px; 
+}
+
+.product-price {
+  font-size: 16px;
+  color: black; 
+  margin-top: 5px; 
+  font-weight: bold;
+}
+
+.product-popup {
+  position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px; /* Adjust the font size as needed */
-  color: white; /* Adjust the color as needed */
-  padding: 5px 10px; /* Adjust padding as needed */
-  border-radius: 10px; /* Rounded corners for description background */
-  font-weight: bolder;
-  width: 80%; /* Adjust width as needed */
-  text-align: left; /* Align text to the left */
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 500px;
+  width: 90%;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.popup-product-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.popup-product-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.popup-product-price {
+  font-size: 20px;
+  color: green;
+  margin-bottom: 15px;
+}
+
+.popup-product-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.popup-add-to-cart-btn {
+  background-color: rgb(28, 76, 138);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }

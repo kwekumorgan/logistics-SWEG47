@@ -16,12 +16,14 @@ const LoginRegister = () => {
   const registerLink = (e) => {
     e.preventDefault();
     setAction('active');
+    setError(''); // Clear error message when switching forms
   };
 
   // Handle switching to login form
   const loginLink = (e) => {
     e.preventDefault();
     setAction('');
+    setError(''); // Clear error message when switching forms
   };
 
   // Handle login form submission
@@ -35,11 +37,12 @@ const LoginRegister = () => {
       // Clear form and navigate after successful login
       setUsername('');
       setPassword('');
+      setError(''); // Clear any existing error messages
       navigate('/'); // Redirect to home page after login
     } catch (error) {
       console.error('Error logging in:', error);
       // Set error message based on the response
-      setError(error.response?.data?.message || 'Username or password incorrect');
+      setError(error);
     }
   };
 
@@ -55,10 +58,11 @@ const LoginRegister = () => {
       setUsername('');
       setEmail('');
       setPassword('');
+      setError(''); // Clear any existing error messages
       navigate('/'); // Redirect to home page after registration
     } catch (error) {
       console.error('Error registering:', error);
-      setError(error.response?.data?.message || 'Registration failed'); // Display error message
+      setError(error); // Display error message
     }
   };
 
@@ -135,6 +139,7 @@ const LoginRegister = () => {
             <label><input type="checkbox" /> I agree to the terms & conditions</label>
           </div>
           <button type="submit">Register</button>
+          {error && <p className="error-message">{error}</p>} {/* Display error message */}
           <div className="register-link">
             <p>Already have an account? <button type="button" className="link-button" onClick={loginLink}>Login</button></p>
           </div>
