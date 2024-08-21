@@ -5,12 +5,14 @@ require('dotenv').config(); // configuration for the dotenv in order to use with
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');// Connecting to the mongoose server
+const cors = require('cors');
 
 // Importing all routes to be used in the main application
 const customerRoutes = require('./routes/customerRoute');
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/productRoute');
-
+const cartRoutes = require('./routes/cartRoute');
+const orderRoutes = require('./routes/orderRoute');
 
 
 mongoose
@@ -20,7 +22,7 @@ mongoose
     console.log(err)// throws an error for wrong database credentials
 })
 
-console.log('Secret Key:', process.env.SECRET_KEY);
+
 
 
 
@@ -28,9 +30,16 @@ console.log('Secret Key:', process.env.SECRET_KEY);
 
 app.use(express.json());// Used in order to get any response in json
 
+app.use(cors({
+    origin: 'http://localhost:3000', // URL where your React frontend is running
+    credentials: true,
+}));
+
 app.use('/api/customers',customerRoutes) // When the customer api is called , it uses the customerRoutes middleware
 app.use('/api/auth',authRoutes)// When the login api is called , it uses the authRoutes middleware
 app.use('/api/products',productRoutes);
+app.use('/api/carts', cartRoutes);
+app.use('/api/orders', orderRoutes);
 // localhost:7000/api/customers/login . This is what the above code means. When the this is finally hosted it will be updated.
 app.listen( process.env.PORT || 7000,()=>{// Uses port 7000 if there is no designated port in the env
     console.log('Backend systen is functioning ');
