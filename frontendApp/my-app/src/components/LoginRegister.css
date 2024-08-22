@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background:url(../Media/arno.jpg);
+  background:url(../Media/Login3.jpg);
   background-size: cover;
   
 }
@@ -17,6 +17,7 @@
   max-width: 400px;
   text-align: center;
   transition: all 0.3s ease;
+  background: transparent;
 }
 
 .login-register-wrapper .form-box h1 {

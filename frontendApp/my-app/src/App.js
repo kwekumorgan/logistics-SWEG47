@@ -10,7 +10,8 @@ import LoginRegister from './components/LoginRegister';
 import Footer from './components/Footer';
 import Carts from './components/Carts';
 import { CartProvider } from './components/CartContext';
-
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
 import './App.css';
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/login" element={<LoginRegister />} />
           <Route path="/carts" element={<Carts />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
         </Routes>
         {location.pathname !== '/login' && <Footer />}
       </div>
