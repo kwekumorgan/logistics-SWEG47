@@ -62,6 +62,11 @@ const LoginRegister = () => {
     }
   };
 
+  // Function to navigate to the ForgotPassword page
+  const navigateToForgotPassword = () => {
+    navigate('/forgot-password');
+  };
+
   return (
     <div className={`login-register-wrapper ${action === 'active' ? 'active' : ''}`}>
       <div className='form-box login'>
@@ -89,7 +94,7 @@ const LoginRegister = () => {
           </div>
           <div className="remember-forgot">
             <label><input type="checkbox" /> Remember me</label>
-            <button type="button" className="link-button">Forgot password?</button>
+            <button type="button" className="link-button" onClick={navigateToForgotPassword}>Forgot password?</button>
           </div>
           <button type="submit">Login</button>
           {error && <p className="error-message shake">{error}</p>} {/* Display error message */}
