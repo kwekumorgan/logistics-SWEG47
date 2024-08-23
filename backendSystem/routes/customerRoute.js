@@ -8,21 +8,37 @@ require('dotenv').config();
 
 
 // UPDATE CREDENTIALS
-router.put('/:id', verifyTokenAndAuthorization, async (req, res) => {
-    if (req.body.password) {
-        req.body.password = CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY).toString();
+router.put('/reset-password/:token', async (req, res) => {
+    const { password } = req.body;
+    const { token } = req.params;
+
+    if (!password) {
+        return res.status(400).json({ message: 'Password is required' });
     }
 
     try {
-        const updatedCustomer = await Customer.findByIdAndUpdate(
-            req.params.id,
-            { $set: req.body },
-            { new: true }
-        );
+        // Find the customer by the reset token and check if it's not expired
+        const customer = await Customer.findOne({
+            resetToken: token,
+            resetTokenExpiry: { $gt: Date.now() },
+        });
 
-        res.status(200).json(updatedCustomer);
+        if (!customer) {
+            return res.status(400).json({ message: 'Invalid or expired token' });
+        }
+
+        // Encrypt the new password
+        const encryptedPassword = CryptoJS.AES.encrypt(password, process.env.SECRET_KEY).toString();
+
+        // Update the customer's password and clear the reset token fields
+        customer.password = encryptedPassword;
+        customer.resetToken = undefined;
+        customer.resetTokenExpiry = undefined;
+        await customer.save();
+
+        res.status(200).json({ message: 'Password has been reset successfully' });
     } catch (err) {
-        res.status(500).json({ message: 'Error updating customer credentials', error: err });
+        res.status(500).json({ message: 'Error resetting password', error: err });
     }
 });
 
