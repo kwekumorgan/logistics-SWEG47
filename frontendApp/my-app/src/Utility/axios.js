@@ -9,7 +9,8 @@ export const login = async (username, password) => {
     });
     return response.data; // return the response data from the backend
   } catch (error) {
-    throw error.response?.data?.message || 'Incorrect Username or Password'; // throw error with a meaningful message
+    // Throwing an Error object with a message
+    throw new Error(error.response?.data?.message || 'Incorrect Username or Password');
   }
 };
 
@@ -23,6 +24,7 @@ export const register = async (username, email, password) => {
     });
     return response.data; // return the response data from the backend
   } catch (error) {
-    throw error.response?.data?.message || 'Registration failed'; // throw error with a meaningful message
+    // Throwing an Error object with a message
+    throw new Error(error.response?.data?.message || 'Registration failed');
   }
 };

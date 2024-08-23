@@ -1,5 +1,5 @@
 import React from 'react';
-import './TextBox.css';
+import './Product.css';
 import p1 from '../Media/p1.jpg';
 import p12 from '../Media/TRYB2.png';
 import p7 from '../Media/PsSQ.jpg';
