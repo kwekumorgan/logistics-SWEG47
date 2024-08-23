@@ -1,7 +1,7 @@
 .products-container {
   margin-top: 20px; /* Adjust the margin to leave space for the header */
   text-align: center; /* Center the h1 text */
-  
+  justify-content: left;
 }
 
 .products-container h1 {
@@ -10,17 +10,34 @@
   text-align: left;
   color: rgb(28, 76, 138); /* Adjust the color as needed */
   margin: 10px 0;
-  margin-left: 60px; /* Adjust margin to position the header correctly */
+  margin-left: 20px; /* Adjust margin to position the header correctly */
 }
 
 .text-box-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   margin-top: 20px; /* Adjust the margin if necessary */
   gap: 0px;
-  
+  padding: 20px;
+}
+
+.category-section {
+  margin-bottom: 30px;
+}
+
+.category-products {
+  display: flex;
+  overflow-x: scroll; /* Allow horizontal scrolling */
+  scroll-behavior: smooth; /* Optional for smooth scrolling */
+  padding-bottom: 10px; /* Ensure there's space for the scrollbar */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+}
+
+.category-products::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
 }
 
 .text-box {
@@ -28,13 +45,13 @@
   text-align: center; 
   position: relative;
   border-radius: 12px;
-  
   overflow: hidden; 
-  flex: 1 1 calc(20% - 20px); 
-  max-width: 290px; 
+  flex: 0 0 20%; /* Adjust to show 5 products in one screen */
+  max-width: 20%; /* Adjust to 20% for 5 products */
+  margin: 10 ;
   height: auto; /* Change this to auto to allow the box to adjust height based on content */
-}
 
+}
 
 .text-box img {
   width: 100%; 
@@ -42,6 +59,7 @@
   object-fit: calc(); /* Ensure the image covers the entire area */
   border-radius: 15px; 
 }
+
 .text-box img:hover {
   transform: scale(1.05); /* Slightly scale up the product */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to make it pop out */
@@ -51,18 +69,5 @@
   justify-content: left;
   text-align: left;
   margin-top: 10px; 
-
   color: #333; 
 }
-
-.product-description {
-  font-size: 20px; 
-}
-
-.product-price {
-  font-size: 16px;
-  color: black; 
-  margin-top: 5px; 
-  font-weight: bold;
-}
-

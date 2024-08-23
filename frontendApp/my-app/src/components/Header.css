@@ -2,7 +2,7 @@
 .header {
   display: flex;
   align-items: center;
-  background-color: #E8E8E8;
+  background-color: white;
   color: black;
   padding: 7px;
   position: relative;
@@ -17,7 +17,7 @@
 }
 
 .header a {
-  background-color: #E8E8E8;
+  background-color: white;
   color: rgb(28, 76, 138);
   padding: 4px 8px;
   margin-right: 10px;
@@ -29,7 +29,7 @@
 }
 
 .header a:hover {
-  background-color: #E8E8E8;
+  background-color: white;
   color: rgb(28, 76, 138);
 }
 
@@ -105,4 +105,62 @@ body {
 /* Style for the main content */
 .content {
   margin-top: 20px; /* Ensure some space between the header and the content */
+}
+
+.cart-container {
+  position: relative;
+  margin-left: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  width: 14px; /* Adjust the width as needed */
+  height: 18px; /* Adjust the height as needed */
+  cursor: pointer;
+  position: relative; /* Ensures the cart count is positioned relative to the icon */
+  margin-right: 20px; /* Adjust spacing between icon and text */
+  z-index: 1; /* Ensures the icon is below the count */
+}
+
+
+.cart-count {
+  position: relative;
+  top: 10px; /* Adjust the top position as needed */
+  right: -5px; /* Adjust the right position as needed */
+  background-color: red;
+  color: white;
+  font-size: 12px; /* Adjust the font size of the cart count */
+  border-radius: 50%;
+  padding:1px 5px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  z-index: 1; /* Ensures the count is above the icon */
+}
+
+
+
+
+
+.cart-link {
+  display: flex;
+  align-items: left;
+  margin-left: 0px;
+  border: 1px solid rgb(28, 76, 138); /* Add border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0px; /* Add spacing inside the border */
+}
+
+
+.cart-text-link:hover {
+  color: rgb(28, 76, 138);
+
+}
+.cart-wrapper {
+  display: flex;
+  align-items:left;
+  border-radius: 5px;
+  padding: 0px;
+  margin-left: 0px;
 }

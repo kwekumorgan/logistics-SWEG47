@@ -40,7 +40,6 @@ const AboutPage = () => {
 <div><header className="header">
       <img src={KashLogo} height="80" alt="Department Of Computer Science" />
       <Link to="/">Home</Link>
-      <Link to="/product">Product</Link>
       <Link to="/Carts">Carts</Link>
       <Link to="/About">About</Link>
       <Link to="/login">
