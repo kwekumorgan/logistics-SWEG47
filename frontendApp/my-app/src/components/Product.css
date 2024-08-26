@@ -15,7 +15,7 @@
   color: rgb(28, 76, 138);
   margin: 10px 0;
   margin-left: 20px;
-  margin-top: -15px;
+  margin-top: -18px;
 }
 
 .text-box-container {
@@ -93,13 +93,13 @@
 
   .text-box {
     flex: 1 1 calc(50% - 30px); /* Two items per row on smaller screens */
-    max-width: calc(55% - 10px); /* Ensure width aligns with flex basis */
+    max-width: calc(50% - 5px); /* Ensure width aligns with flex basis */
   }
 }
 
 @media screen and (max-width: 480px) {
   .text-box {
     flex: 1 1 calc(50% - 30px); /* Two items per row on mobile screens */
-    max-width: calc(50% - 10px); /* Ensure width aligns with flex basis */
+    max-width: calc(50% - 5px); /* Ensure width aligns with flex basis */
   }
 }
