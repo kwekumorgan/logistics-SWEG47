@@ -27,9 +27,9 @@ const TextBox = () => {
 
   return (
     <div className="text-box-container">
-      {renderCategory({ name: '', products: product_data.boltSeals })}
-      {renderCategory({ name: '', products: product_data.cableSeals })}
-      {renderCategory({ name: '', products: product_data.plasticSeals })}
+      {renderCategory({  products: product_data.boltSeals })}
+      {renderCategory({  products: product_data.cableSeals })}
+      {renderCategory({  products: product_data.plasticSeals })}
     </div>
   );
 };

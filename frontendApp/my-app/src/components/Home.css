@@ -1,185 +1,38 @@
-/* Style for the header */
-.header {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  color: black;
-  padding: 7px;
-  position: relative;
-  width: 100%;
-  z-index: 999;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+/* Home.css */
 
-.header img {
-  height: 66px;
-  margin-right: 12px;
-}
-
-.header a {
-  background-color: white;
-  color: rgb(28, 76, 138);
-  padding: 4px 8px;
-  margin-right: 10px;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 15px;
-}
-
-.header a:hover {
-  background-color: white;
-  color: rgb(28, 76, 138);
-}
-
-/* Style for the Sign In button */
-.sign-in-button {
-  background-color: #E8E8E8;
-  color: rgb(28, 76, 138);
-  padding: 4px 8px;
-  margin-right: 10px;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 14px;
-  border: 1px solid rgb(28, 76, 138);
-}
-
-.sign-in-button:hover {
-  background-color: #E8E8E8;
-  color: rgb(28, 76, 138);
-}
-
-/* Style for the search container */
-.search-container {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  width: 40%; /* Adjust this value to make the search bar longer or shorter */
-  position: relative;
-}
-
-.search-input {
-  width: 100%;
-  padding: 8px; /* Adjust padding as needed */
-  border: 1px solid #ddd; /* Default border color */
-  border-radius: 25px; /* Rounded corners */
-  font-size: 16px;
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  padding-right: 40px; /* Add space for the search button */
-  transition: border-color 0.3s ease; /* Smooth transition for border color change */
-}
-
-/* Change border color on focus */
-.search-input:focus {
-  border-color: rgb(28, 76, 138); /* Border color when focused */
-  outline: none; /* Remove default outline */
-}
-
-.search-button {
-  position: absolute;
-  right: 10px; /* Adjust this value if needed to fit inside the input */
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%; /* Ensure it fills the input's height */
-}
-
-.search-button img {
-  width: 20px; /* Adjust the size of the search icon */
-  height: 20px;
-}
-
-/* Add padding to the top of the body content to avoid it being hidden behind the fixed header */
+/* Ensure the root container does not overflow */
 body {
   margin: 0;
-  padding-top: 70px; /* Adjust this value based on the height of your header */
-}
-
-/* Style for the main content */
-.content {
-  margin-top: 20px; /* Ensure some space between the header and the content */
-}
-
-.cart-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-}
-
-.cart-icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  position: relative; /* Ensures the cart count is positioned relative to the icon */
-  margin-right: 5px; /* Adjust spacing between icon and text */
-}
-
-.cart-count {
-  position: absolute;
-  top: 5px; /* Adjust to align properly with the cart icon */
-  right: 1310px; /* Adjust to align properly with the cart icon */
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  border-radius: 50%;
-  padding: 2px 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1; /* Ensure the count is above the cart icon */
-}
-
-.cart-link {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-}
-
-.cart-text-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: rgb(28, 76, 138);
-  font-size: 15px;
-}
-
-.cart-text-link:hover {
-  color: rgb(28, 76, 138);
-}
-@media (max-width: 768px) {
-  .search-container {
-    width: 100%; /* Make the search bar full width on smaller screens */
-  }
-
-  .cart-container {
-    margin-left: 10px; /* Reduce margin on smaller screens */
-  }
-
-  .cart-count {
-    top: 5px; /* Adjust for smaller screens */
-    right: 393px; /* Adjust for smaller screens */
-    font-size: 10px; /* Reduce font size on smaller screens */
-    padding: 2px 4px; /* Adjust padding for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .cart-container {
-    margin-left: 5px; /* Further reduce margin on extra small screens */
-  }
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
   
-  .cart-count {
-    top: -2px; /* Adjust for very small screens */
-    right: -388px; /* Adjust for very small screens */
-    font-size: 8px; /* Further reduce font size on very small screens */
-    padding: 2px 3px; /* Adjust padding for very small screens */
+  
+}
+.Home{
+  background-color: white;
+
+}
+.products-container {
+  width: 100%;
+  max-width: 3000px;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+ 
+}
+
+.products-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .products-title {
+    font-size: 1.5rem;
+  }
+
+  .products-container {
+    padding: 5px;
   }
 }
