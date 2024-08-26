@@ -1,124 +1,191 @@
-/* LoginRegister.css */
+/* Wrapper for both forms */
 .login-register-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background:url(../Media/arno.jpg);
+  background: url('../Media/zzz.avif') no-repeat center center fixed; /* Add your background image */
   background-size: cover;
-  
 }
 
-.login-register-wrapper .form-box {
-  background-color: rgb(28, 76, 138); /* Blue background with some transparency */
-  border-radius: 15px;
-  padding: 50px;
+/* Shared styling for the form boxes */
+.form-box {
+  background-color: #ffffff; /* White background for the form box */
+  border-radius: 10px;
+  padding: 40px;
   width: 100%;
-  max-width: 400px;
-  text-align: center;
+  max-width: 450px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  background: transparent;
+  position: relative;
 }
 
-.login-register-wrapper .form-box h1 {
+/* Form box headings */
+.form-box h1 {
   margin-bottom: 20px;
-  color: #fff;
+  color: #2980b9; /* Deep blue color */
+  font-family: 'Poppins', sans-serif; /* Modern sans-serif font */
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
 }
 
-.login-register-wrapper .input-box {
+/* Input boxes */
+.input-box {
   position: relative;
   margin-bottom: 20px;
 }
 
-.login-register-wrapper .input-box input {
+.input-box input {
   width: 100%;
-  padding: 10px;
-  padding-left: 40px;
-  background: rgba(255, 255, 255, 0.7);
-  border: none;
-  border-radius: 5px;
+  padding: 14px;
+  padding-left: 50px;
+  background: #ecf0f1; /* Light grey background for inputs */
+  border: 1px solid #bdc3c7; /* Light border */
+  border-radius: 8px;
+  color: #052a4f; /* Deep blue-grey text for contrast */
+  font-size: 16px;
 }
 
-.login-register-wrapper .input-box .icon {
+/* Input box icons */
+.input-box .icon {
   position: absolute;
-  left: 10px;
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  color: #000;
+  color: #023336; /* Grey icon color */
 }
 
-.login-register-wrapper .remember-forgot {
+/* Remember and Forgot password styling */
+.remember-forgot {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.login-register-wrapper .remember-forgot label {
-  color: #fff;
+.remember-forgot label {
+  color: #2c3e50; /* Deep blue-grey text */
 }
 
-.login-register-wrapper .remember-forgot .link-button {
+.remember-forgot .link-button {
   background: none;
   border: none;
-  color: #fff;
+  color: #022a45; /* Deep blue color */
   cursor: pointer;
   text-decoration: underline;
+  font-size: 14px;
 }
 
-.login-register-wrapper button {
+/* Submit button */
+button {
+  position:relative;
   width: 100%;
-  padding: 10px;
+  padding: 14px;
   border: none;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #000;
+  border-radius: 8px;
+  background-color: #022a45; /* Deep blue color */
+  color: #ffffff; /* White text */
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease; /* Smooth transitions */
+  overflow: hidden;
 }
 
-.login-register-wrapper button:hover {
-  background-color: #ddd;
+button:hover {
+  background-color: #1c5981; /* Darker blue on hover */
+}
+button:hover {
+  background-color: #1c5981; /* Darker blue on hover */
 }
 
-.login-register-wrapper .register-link p {
-  color: #fff;
+/* Button active (pressed) effect */
+button:active {
+  background-color: #1a5276; /* Even darker blue when pressed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Simulates a pressed shadow */
+  transform: translateY(2px); /* Simulates the button being pressed down */
 }
 
-.login-register-wrapper .register-link .link-button {
+/* Spinner effect */
+.button-loading {
+  pointer-events: none; /* Disable button interactions when loading */
+}
+
+/* Spinner styling */
+.button-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  border: 4px solid rgba(255, 255, 255, 0.3); /* Light border */
+  border-radius: 50%;
+  border-top: 4px solid #ffffff; /* White border for spinner */
+  animation: spin 1s linear infinite; /* Animation for spinner */
+  transform: translate(-50%, -50%); /* Center spinner */
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Register link paragraph */
+.register-link p {
+  color: #0b2c4e; /* Deep blue-grey text */
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-link .link-button {
   background: none;
   border: none;
-  color: #fff;
+  color: #063555; /* Deep blue color */
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* Hide the login form when the register form is active */
-.login-register-wrapper.active .form-box.login {
-  display: none;
+.password-box {
+  position: relative;
 }
 
-/* Show the register form when it is active */
-.login-register-wrapper .form-box.register {
-  display: none;
+/* Eye icon for toggling password visibility */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #7f8c8d; /* Light grey color for the icon */
+  font-size: 20px;
 }
 
-.login-register-wrapper.active .form-box.register {
-  display: block;
+/* Update input-box styling for better alignment */
+.input-box input {
+  width: calc(100% - 0px); /* Adjust width to make space for icon */
+  padding: 12px;
+  padding-left: 40px;
+  background: #ecf0f1; /* Light grey background */
+  border: 1px solid #bdc3c7; /* Light border */
+  border-radius: 8px;
+  color: #2c3e50; /* Dark text for contrast */
+  font-size: 16px;
 }
+
+/* Eye icon hover effect */
+.toggle-password:hover {
+  color: #3498db; /* Bright blue color on hover */
+}
+
+/* Error message styling */
 .error-message {
-  color: rgb(215, 58, 58);
-  font-weight: bold;
+  color: #0a0201; /* Red color for errors */
+  font-size: 14px;
   margin-top: 10px;
-}
-
-.shake {
-  animation: shake 0.3s;
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+  text-align: center;
 }
