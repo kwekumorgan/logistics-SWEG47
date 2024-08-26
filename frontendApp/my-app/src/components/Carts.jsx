@@ -71,10 +71,7 @@ const Carts = () => {
     if (cartCategories.length === 0) {
       return true; // If cart is empty, show all products
     }
-    if (cartCategories.length === 1) {
-      return cartCategories.includes(product.category); // If one category, show only that category
-    }
-    return cartCategories.includes(product.category); // If multiple categories, show products from those categories
+    return cartCategories.includes(product.category); // Show products from the same categories
   });
 
   return (
@@ -112,7 +109,7 @@ const Carts = () => {
       <div className="cart-content-custom">
         <div className="card-container-custom">
           {cart.length === 0 ? (
-            <p>Your cart is empty</p>
+            <p1>Your cart is empty</p1>
           ) : (
             cart.map((item, index) => (
               <div className="card-custom" key={item.id}>

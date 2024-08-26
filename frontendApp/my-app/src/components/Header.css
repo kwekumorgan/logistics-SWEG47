@@ -80,7 +80,7 @@
 
 .search-button {
   position: absolute;
-  right: 0; /* Adjust to fit inside the input */
+  right: 10px; /* Adjust this value if needed to fit inside the input */
   background: none;
   border: none;
   padding: 0;
@@ -109,58 +109,77 @@ body {
 
 .cart-container {
   position: relative;
-  margin-left: 0px;
   display: flex;
   align-items: center;
+  margin-left: 20px;
 }
 
 .cart-icon {
-  width: 14px; /* Adjust the width as needed */
-  height: 18px; /* Adjust the height as needed */
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   position: relative; /* Ensures the cart count is positioned relative to the icon */
-  margin-right: 20px; /* Adjust spacing between icon and text */
-  z-index: 1; /* Ensures the icon is below the count */
+  margin-right: 5px; /* Adjust spacing between icon and text */
 }
-
 
 .cart-count {
-  position: relative;
-  top: 10px; /* Adjust the top position as needed */
-  right: -5px; /* Adjust the right position as needed */
+  position: absolute;
+  top: 5px; /* Adjust to align properly with the cart icon */
+  right: 1310px; /* Adjust to align properly with the cart icon */
   background-color: red;
   color: white;
-  font-size: 12px; /* Adjust the font size of the cart count */
+  font-size: 12px;
   border-radius: 50%;
-  padding:1px 5px;
+  padding: 2px 6px;
   display: flex;
-  justify-content: left;
-  align-items: left;
-  z-index: 1; /* Ensures the count is above the icon */
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Ensure the count is above the cart icon */
 }
-
-
-
-
 
 .cart-link {
   display: flex;
-  align-items: left;
-  margin-left: 0px;
-  border: 1px solid rgb(28, 76, 138); /* Add border */
-  border-radius: 5px; /* Rounded corners */
-  padding: 0px; /* Add spacing inside the border */
+  align-items: center;
+  margin-left: 20px;
 }
 
+.cart-text-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(28, 76, 138);
+  font-size: 15px;
+}
 
 .cart-text-link:hover {
   color: rgb(28, 76, 138);
-
 }
-.cart-wrapper {
-  display: flex;
-  align-items:left;
-  border-radius: 5px;
-  padding: 0px;
-  margin-left: 0px;
+@media (max-width: 768px) {
+  .search-container {
+    width: 100%; /* Make the search bar full width on smaller screens */
+  }
+
+  .cart-container {
+    margin-left: 10px; /* Reduce margin on smaller screens */
+  }
+
+  .cart-count {
+    top: 5px; /* Adjust for smaller screens */
+    right: 393px; /* Adjust for smaller screens */
+    font-size: 10px; /* Reduce font size on smaller screens */
+    padding: 2px 4px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-container {
+    margin-left: 5px; /* Further reduce margin on extra small screens */
+  }
+  
+  .cart-count {
+    top: -2px; /* Adjust for very small screens */
+    right: -388px; /* Adjust for very small screens */
+    font-size: 8px; /* Further reduce font size on very small screens */
+    padding: 2px 3px; /* Adjust padding for very small screens */
+  }
 }

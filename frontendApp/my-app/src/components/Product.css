@@ -1,39 +1,43 @@
 .products-container {
-  margin-top: 20px; /* Adjust the margin to leave space for the header */
-  text-align: center; /* Center the h1 text */
+  margin-top: 20px;
+  text-align: center;
   justify-content: left;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: white;
 }
 
 .products-container h1 {
   font-size: 20px;
   font-weight: bold;
   text-align: left;
-  color: rgb(28, 76, 138); /* Adjust the color as needed */
+  color: rgb(28, 76, 138);
   margin: 10px 0;
-  margin-left: 20px; /* Adjust margin to position the header correctly */
+  margin-left: 20px;
+  margin-top: -15px;
 }
 
 .text-box-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  align-items: center;
-  margin-top: 20px; /* Adjust the margin if necessary */
-  gap: 0px;
+  flex-direction: column; /* Stack categories vertically */
+  gap: 20px; /* Space between categories */
+  margin-top: -20px;
   padding: 20px;
+  background-color: white;
 }
 
 .category-section {
-  margin-bottom: 30px;
+  width: 100%;
 }
 
 .category-products {
   display: flex;
-  overflow-x: scroll; /* Allow horizontal scrolling */
-  scroll-behavior: smooth; /* Optional for smooth scrolling */
-  padding-bottom: 10px; /* Ensure there's space for the scrollbar */
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
-  -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+  flex-wrap: nowrap; /* Maintain horizontal scrolling on large screens */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  gap: 10px; /* Space between items */
 }
 
 .category-products::-webkit-scrollbar {
@@ -41,33 +45,54 @@
 }
 
 .text-box {
-  margin: 8px; 
-  text-align: center; 
-  position: relative;
+  text-align: center;
   border-radius: 12px;
-  overflow: hidden; 
+  overflow: hidden;
   flex: 0 0 20%; /* Adjust to show 5 products in one screen */
   max-width: 20%; /* Adjust to 20% for 5 products */
-  margin: 10 ;
-  height: auto; /* Change this to auto to allow the box to adjust height based on content */
-
+  margin: 8px;
+  height: auto;
+  padding: 10px;
 }
 
 .text-box img {
-  width: 100%; 
-  height: 205px; /* Keep the image height fixed as before */
-  object-fit: calc(); /* Ensure the image covers the entire area */
-  border-radius: 15px; 
+  width: 100%;
+  height: 205px;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 15px;
 }
 
 .text-box img:hover {
-  transform: scale(1.05); /* Slightly scale up the product */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to make it pop out */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.product-description, .product-price {
-  justify-content: left;
-  text-align: left;
-  margin-top: 10px; 
-  color: #333; 
+.product-description {
+  margin-top: 8px;
+  color: #333;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #007bff;
+}
+
+@media screen and (max-width: 768px) {
+  .category-products {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    overflow-x: hidden; /* Disable horizontal scrolling on smaller screens */
+  }
+
+  .text-box {
+    flex: 1 1 calc(50% - 30px); /* Two items per row on smaller screens */
+    max-width: calc(50% - 16px); /* Ensure width aligns with flex basis */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .text-box {
+    flex: 1 1 calc(50% - 16px); /* Two items per row on mobile screens */
+    max-width: calc(50% - 16px); /* Ensure width aligns with flex basis */
+  }
 }
