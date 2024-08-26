@@ -59,17 +59,18 @@ const Header = () => {
 
       
       
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search"
-          onKeyPress={handleKeyPress}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          <img src={SearchIcon} alt="Search" />
-        </button>
-      </div>
+<div className="search-container">
+  <input
+    type="text"
+    className="search-input"
+    placeholder="Search"
+    onKeyPress={handleKeyPress}
+  />
+  <button className="search-button" onClick={handleSearch}>
+    <img src={SearchIcon} alt="Search" />
+  </button>
+</div>
+
     </header>
   );
 };

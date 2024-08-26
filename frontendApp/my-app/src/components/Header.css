@@ -52,24 +52,21 @@
   color: rgb(28, 76, 138);
 }
 
-/* Style for the search container */
 .search-container {
   margin-left: auto;
   display: flex;
   align-items: center;
   width: 40%; /* Adjust this value to make the search bar longer or shorter */
   position: relative;
-
 }
 
 .search-input {
   width: 100%;
-  padding: 8px; /* Adjust padding as needed */
+  padding: 8px 40px 8px 8px; /* Add padding to the right for the search button */
   border: 1px solid #ddd; /* Default border color */
   border-radius: 25px; /* Rounded corners */
   font-size: 16px;
   box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  padding-right: 40px; /* Add space for the search button */
   transition: border-color 0.3s ease; /* Smooth transition for border color change */
 }
 
@@ -81,7 +78,7 @@
 
 .search-button {
   position: absolute;
-  right: 10px; /* Adjust this value if needed to fit inside the input */
+  right: 10px;
   background: none;
   border: none;
   padding: 0;
@@ -89,13 +86,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%; /* Ensure it fills the input's height */
+  height: 100%;
+  width: 30px;
 }
 
 .search-button img {
   width: 20px; /* Adjust the size of the search icon */
   height: 20px;
 }
+
+/* Ensure the input field has the correct z-index to stay above the button */
+.search-input {
+  z-index: 1;
+}
+
+.search-button {
+  z-index: 2;
+}
+
 
 /* Add padding to the top of the body content to avoid it being hidden behind the fixed header */
 body {
@@ -117,7 +125,7 @@ body {
 
 .cart-icon {
   width: 27px;
-  height: 27px; /* Make the height the same as the width for a square icon */
+  height: -20px; /* Make the height the same as the width for a square icon */
   cursor: pointer;
   position: relative;
   margin-right: 10px; /* Adjust spacing between icon and text */
@@ -126,7 +134,7 @@ body {
 }
 
 .cart-count {
-  position: relative;
+  position: absolute;
   top: 10px; /* Adjust to align properly within the cart icon */
   right: 1245px; /* Adjust to center within the cart icon */
   background-color: #007bff;
@@ -169,7 +177,7 @@ body {
 
   .cart-count {
     top: 10px; /* Adjust for smaller screens */
-    right: 30px; /* Adjust for smaller screens */
+    right: 340px; /* Adjust for smaller screens */
     font-size: 10px; /* Reduce font size on smaller screens */
     padding: 2px 4px; /* Adjust padding for smaller screens */
   }
