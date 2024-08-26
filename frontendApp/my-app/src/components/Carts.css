@@ -289,7 +289,7 @@
 .similar-product-card img {
   width: 100%; 
   height: 180px; /* Keep the image height fixed as before */
-  object-fit: calc(); /* Ensure the image covers the entire area */
+  object-fit:fill; /* Ensure the image covers the entire area */
   border-radius: 15px; 
 }
 
