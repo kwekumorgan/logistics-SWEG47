@@ -30,10 +30,12 @@ mongoose
 
 app.use(express.json());// Used in order to get any response in json
 
-app.use(cors({
-    origin: 'http://localhost:3000', // URL where your React frontend is running
-    credentials: true,
-}));
+const corsOptions = {
+    origin: 'https://logistics-sweg-47.vercel.app', // Vercel domain
+    optionsSuccessStatus: 200,
+  };
+  
+  app.use(cors(corsOptions))
 
 app.use('/api/customers',customerRoutes) // When the customer api is called , it uses the customerRoutes middleware
 app.use('/api/auth',authRoutes)// When the login api is called , it uses the authRoutes middleware
