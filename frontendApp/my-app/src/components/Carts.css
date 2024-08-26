@@ -335,6 +335,6 @@
 
 @media screen and (max-width: 480px) {
   .similar-product-card {
-    width: 100%; /* Single item per row */
+    width: calc(50% - 20px); /* Two items per row */
   }
 }

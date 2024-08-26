@@ -48,8 +48,9 @@
 }
 
 .product-description {
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 20px;
+  font-weight: bolder;
 }
 
 .add-to-cart-btn {
@@ -63,4 +64,24 @@
   width: 100%; /* Makes the button span across the entire right half */
   box-sizing: border-box;
   margin-top: auto; /* Pushes the button to the bottom */
+}
+.add-to-cart-btn:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.add-to-cart-btn.clicked {
+  animation: clickEffect 0.2s ease-out;
+}
+
+@keyframes clickEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
