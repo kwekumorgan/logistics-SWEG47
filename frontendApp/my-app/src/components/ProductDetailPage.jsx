@@ -54,6 +54,17 @@ const ProductDetailPage = () => {
       handleSearch();
     }
   };
+  const handleAddToCart = (product, event) => {
+    addToCart(product);
+  
+    const button = event.currentTarget;
+    button.classList.add('clicked');
+  
+    setTimeout(() => {
+      button.classList.remove('clicked');
+    }, 200); // The duration should match the CSS animation duration
+  };
+  
 
   return (
     <div className="main_content1">
@@ -85,9 +96,12 @@ const ProductDetailPage = () => {
           <h2>{product.product_name}</h2>
           <p className="product-price">{product.currency} {product.price}</p>
           <p className="product-description">{product.description}</p>
-          <button className="add-to-cart-btn" onClick={() => addToCart(product)}>
-            Add to Cart
-          </button>
+          <button 
+  className="add-to-cart-btn" 
+  onClick={(event) => handleAddToCart(product, event)}>
+  Add to Cart
+</button>
+
         </div>
       </div>
     </div>
