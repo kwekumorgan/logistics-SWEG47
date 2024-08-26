@@ -93,13 +93,13 @@
 
   .text-box {
     flex: 1 1 calc(50% - 30px); /* Two items per row on smaller screens */
-    max-width: calc(50% - 16px); /* Ensure width aligns with flex basis */
+    max-width: calc(50% - 10px); /* Ensure width aligns with flex basis */
   }
 }
 
 @media screen and (max-width: 480px) {
   .text-box {
     flex: 1 1 calc(50% - 30px); /* Two items per row on mobile screens */
-    max-width: calc(50% - 16px); /* Ensure width aligns with flex basis */
+    max-width: calc(50% - 10px); /* Ensure width aligns with flex basis */
   }
 }
