@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
 .products-container {
   margin-top: 20px;
   text-align: center;
@@ -9,6 +10,7 @@
 }
 
 .products-container h1 {
+  font-family: Lexend;
   font-size: 20px;
   font-weight: bold;
   text-align: left;
@@ -23,7 +25,7 @@
   flex-direction: column; /* Stack categories vertically */
   gap: 20px; /* Space between categories */
   margin-top: -20px;
-  padding: 20px;
+  padding: 10px;
   background-color: #E8E8E8;
 }
 
@@ -49,7 +51,7 @@
   border-radius: 12px;
   overflow: hidden;
   flex: 0 0 30%; /* Adjust to show 5 products in one screen */
-  max-width: 20%; /* Adjust to 20% for 5 products */
+  max-width: 18.5%; /* Adjust to 20% for 5 products */
   margin: 8px;
   height: auto;
   padding: 10px;
@@ -92,8 +94,8 @@
   }
 
   .text-box {
-    flex: 1 1 calc(50% - 30px); /* Two items per row on smaller screens */
-    max-width: calc(50% - 5px); /* Ensure width aligns with flex basis */
+    flex: 1 1 calc(30% - 5px); /* Two items per row on smaller screens */
+    max-width: calc(30% - 5px); /* Ensure width aligns with flex basis */
   }
 }
 
