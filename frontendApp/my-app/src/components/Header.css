@@ -202,7 +202,7 @@
   }
 
   .cart-count {
-    right: 10px; /* Adjust position to fit better */
+    right: 20px; /* Adjust position to fit better */
     top: -5px; /* Adjust vertical alignment */
     font-size: 10px;
     padding: 2px 4px;
@@ -213,4 +213,13 @@
     margin-top: 10px;
     position: static; /* Remove absolute positioning */
   }
+}
+.search-button img {
+  width: 10px;
+  height: 10px;
+  margin-left: 20px;
+  position: absolute;
+  border: none;
+ 
+ 
 }

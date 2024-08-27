@@ -95,10 +95,10 @@
 
   .text-box {
     flex: 1 1 calc(30% - 5px); /* Two items per row on smaller screens */
-    max-width: calc(50% - 5px); /* Ensure width aligns with flex basis */
+    max-width: calc(70% - 5px); /* Ensure width aligns with flex basis */
   }
   .text-box img {
-    height: 160px;
+    height: 120px;
     width: 100%;
   }
 }
@@ -109,7 +109,7 @@
     max-width: calc(50% - 3px); /* Ensure width aligns with flex basis */
   }
   .text-box img {
-    height: 160px;
+    height: 110px;
     width: 100%;
   }
 }
