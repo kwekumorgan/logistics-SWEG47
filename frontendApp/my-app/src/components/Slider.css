@@ -1,16 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 /* Slider wrapper styles */
 .slider-wrapper {
   width: 100vw;
   height: 80vh; /* Default height for larger screens */
   overflow: hidden;
   position: relative;
-  
 }
+
+/* Text styles */
+.text {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -200%); /* Adjust to truly center the text */
+  width: 80%; /* Adjust width as needed */
+  text-align: center;
+  font-family: Lexend;
+  font-size: 64px;
+  line-height: 65px;
+  font-weight: 700;
+  color: #FFFFFF;
+  z-index: 10; /* Ensure text is on top */
+}
+
+
+.text2 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 80%;
+  transform: translate(-35%, -140%);
+  height: 36px;
+  font-family: Manrope;
+  font-size: 24px;
+  line-height: 180px;
+  font-weight: 400;
+  color: #FFFFFFFF;
+  }
 
 /* Image and video container styles */
 .image-container, .video-container {
   width: 100%;
   height: 100%;
+  position: relative; /* Ensure text is positioned relative to the container */
 }
 
 /* Full-screen image and video styles */
@@ -45,6 +78,18 @@ video::-webkit-media-controls-panel {
   .slider-wrapper {
     height: 50vh; /* Decrease height for small screens */
   }
+  .text {
+    font-size: 32px; /* Adjust text size for smaller screens */
+    line-height: 42px;
+    transform: translate(-50%, -90%);
+  }
+  .text2{
+    transform: translate(-35%, -140%);
+    font-size: 12px;
+  line-height: 200px;
+
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -52,7 +97,82 @@ video::-webkit-media-controls-panel {
     height: 40vh; /* Decrease height for very small screens */
   }
 
+ .text {
+    font-size: 32px; /* Adjust text size for smaller screens */
+    line-height: 42px;
+    transform: translate(-50%, -90%);
+  }
+  .text2{
+    transform: translate(-35%, -140%);
+    font-size: 12px;
+  line-height: 200px;
+
+  }
+
+
   .full-screen-image, .full-screen-video {
     border-radius: 5px;
   }
 }
+
+/* Button styles */
+.button {
+  position: absolute;
+  top: 55%; /* Adjust as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 52px;
+  width: 10%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Manrope;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #FFFFFF;
+  background: #6D31EDFF;
+  opacity: 1;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  z-index: 20; /* Ensure button is above other elements */
+}
+
+/* Hover */
+.button:hover {
+  color: #FFFFFFFF;
+  background: #5113D7FF;
+}
+
+/* Pressed */
+.button:hover:active {
+  color: #FFFFFFFF;
+  background: #3F0EA6FF;
+}
+
+/* Disabled */
+.button:disabled {
+  opacity: 0.4;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .button {
+    font-size: 16px;
+    height: 48px;
+    width: 20%;
+    top: 70%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    font-size: 14px;
+    height: 44px;
+    width: 20%;
+    top: 70%; 
+  }
+}
+
