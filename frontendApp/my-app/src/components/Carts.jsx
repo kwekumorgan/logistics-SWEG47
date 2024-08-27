@@ -62,7 +62,9 @@ const Carts = () => {
     return cartCategories.includes(product.category); // Show products from the same categories
   });
 
+
   // Calculate total quantity in the cart
+
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
 
@@ -77,11 +79,22 @@ const Carts = () => {
       </Link>
 
       <div className='cart-container'> <Link to="/Carts" className="cart-text-link">
+       <header className="header">
+      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
+      <Link to="/">Home</Link>
+      
+      <Link to="/About">About</Link>
+      <Link to="/login">
+        <button className="sign-in-button">Sign In</button>
+      </Link>
+      <div className="cart-container"><Link to="/Carts" className="cart-text-link">
+
         <img src={CartIcon} alt="Cart" className="cart-icon" />
         {totalQuantity > 0 && (
           <span className="cart-count">{totalQuantity}</span>
         )}
         Carts
+
       </Link>
       </div>
       <div className="search-container">
@@ -97,6 +110,23 @@ const Carts = () => {
       </div>
       
     </header>
+
+      </Link></div>
+      <div className="search-container">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search"
+            onKeyPress={handleKeyPress}
+          />
+          <button className="search-button" onClick={handleSearch}>
+            <img src={SearchIcon} alt="Search" />
+          </button>
+        </div>
+     
+    </header>
+
+
       <div className="cart-content-custom">
         <div className="card-container-custom">
           {cart.length === 0 ? (

@@ -173,7 +173,9 @@ video::-webkit-media-controls-panel {
   .button {
     font-size: 10px;
     height: 44px;
+
     width: 30%;
+
     top: 70%; 
   }
 }
