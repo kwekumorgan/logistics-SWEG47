@@ -95,13 +95,21 @@
 
   .text-box {
     flex: 1 1 calc(30% - 5px); /* Two items per row on smaller screens */
-    max-width: calc(30% - 5px); /* Ensure width aligns with flex basis */
+    max-width: calc(50% - 5px); /* Ensure width aligns with flex basis */
+  }
+  .text-box img {
+    height: 160px;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
   .text-box {
-    flex: 1 1 calc(30% - 4px); /* Two items per row on mobile screens */
-    max-width: calc(30% - 4px); /* Ensure width aligns with flex basis */
+    flex: 1 1 calc(20% - 3px); /* Two items per row on mobile screens */
+    max-width: calc(50% - 3px); /* Ensure width aligns with flex basis */
+  }
+  .text-box img {
+    height: 160px;
+    width: 100%;
   }
 }

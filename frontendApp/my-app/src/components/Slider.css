@@ -171,10 +171,10 @@ video::-webkit-media-controls-panel {
 
 @media (max-width: 480px) {
   .button {
-    font-size: 10px;
+    font-size: 7px;
     height: 44px;
 
-    width: 30%;
+    width: 25%;
 
     top: 70%; 
   }
