@@ -5,8 +5,12 @@ import React, { useEffect } from 'react';
 import './About.css'; // Import the CSS file specific to the About page
 import SearchIcon from '../Media/Search.png';
 import CartIcon from '../Media/carts1.png';
+import { useCart } from '../components/CartContext';
+
+
 
 const AboutPage = () => {
+  const { cart } = useCart();
   useEffect(() => {
     function handleScroll() {
       const header = document.querySelector('.header');
@@ -36,8 +40,7 @@ const AboutPage = () => {
     }
   };
 
-  // Mock cart array
-  const cart = []; // This is just a placeholder; replace with your actual cart data
+ 
 
   // Calculate the total quantity in the cart
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -47,7 +50,8 @@ const AboutPage = () => {
       <header className="header">
         <img src={KashLogo} height="80" alt="Department Of Computer Science" />
         <Link to="/">Home</Link>
-        <Link to="/About">About</Link>
+
+
         <Link to="/login">
           <button className="sign-in-button">Sign In</button>
         </Link>
