@@ -6,8 +6,11 @@ import product_data from './product_data'; // Correct import
 import './Header.css';
 import KashLogo from '../Media/KASHLOGO1.jpg';
 import SearchIcon from '../Media/Search.png';
+import CartIcon from '../Media/carts1.png';
+
 
 const ProductDetailPage = () => {
+  const { cart } = useCart();
   const { addToCart } = useCart();
   const { id } = useParams();
 
@@ -28,8 +31,8 @@ const ProductDetailPage = () => {
   useEffect(() => {
     function handleScroll() {
       const header = document.querySelector('.header');
-      const navbarHeight = document.querySelector('.ribbon').offsetHeight;
-      if (window.scrollY > navbarHeight) {
+      
+      if (window.scrollY > 0) {
         header.style.position = 'fixed';
         header.style.top = '0';
       } else {
@@ -64,19 +67,32 @@ const ProductDetailPage = () => {
       button.classList.remove('clicked');
     }, 200); // The duration should match the CSS animation duration
   };
+
+
+  
+
+    // Calculate the total quantity in the cart
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
   
 
   return (
     <div className="main_content1">
-      <header className="header">
-        <img src={KashLogo} height="80" alt="Department Of Computer Science" />
-        <Link to="/">Home</Link>
-        <Link to="/Carts">Carts</Link>
-        <Link to="/About">About</Link>
-        <Link to="/login">
-          <button className="sign-in-button">Sign In</button>
-        </Link>
-        <div className="search-container">
+     <header className="header">
+      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
+      <Link to="/">Home</Link>
+      
+
+      <Link to="/login">
+        <button className="sign-in-button">Sign In</button>
+      </Link>
+      <div className="cart-container"><Link to="/Carts" className="cart-text-link">
+        <img src={CartIcon} alt="Cart" className="cart-icon" />
+        {totalQuantity > 0 && (
+          <span className="cart-count">{totalQuantity}</span>
+        )}
+        Carts
+      </Link></div>
+      <div className="search-container">
           <input
             type="text"
             className="search-input"
@@ -87,7 +103,8 @@ const ProductDetailPage = () => {
             <img src={SearchIcon} alt="Search" />
           </button>
         </div>
-      </header>
+     
+    </header>
       <div className="product-detail-container">
         <div className="product-image">
           <img src={product.thumb} alt={product.product_name} />

@@ -30,12 +30,18 @@ export const CartProvider = ({ children }) => {
   };
 
   const changeQuantity = (productId, quantity) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
+    setCart((prevCart) => {
+      if (quantity <= 0) {
+        // Remove item if quantity is zero or less
+        return prevCart.filter((item) => item.id !== productId);
+      }
+      // Otherwise, update quantity
+      return prevCart.map((item) =>
         item.id === productId ? { ...item, quantity } : item
-      )
-    );
+      );
+    });
   };
+  
 
   return (
     <CartContext.Provider value={{ cart, addToCart, removeFromCart, changeQuantity }}>
