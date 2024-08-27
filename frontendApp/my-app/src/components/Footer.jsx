@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Footer.css'; 
 import facebookIcon from '../Media/fbook.jpg';
 import instagramIcon from '../Media/instagram.jpg';
-import SearchIcon from '../Media/Search.png';
+import SearchIcon1 from '../Media/Search.png';
 
 const Footer = () => {
   const handleSearch = () => {
@@ -43,7 +43,7 @@ const Footer = () => {
             onKeyPress={handleKeyPress}
           />
           <button className="footer-search-button" onClick={handleSearch}>
-            <img src={SearchIcon} alt="Search" />
+            <img src={SearchIcon1} alt="Search" />
           </button>
         </div>
       </div>

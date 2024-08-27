@@ -74,17 +74,28 @@ const Carts = () => {
     return cartCategories.includes(product.category); // Show products from the same categories
   });
 
+  // Calculate the total quantity in the cart
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+
   return (
     <div className="main_content-custom">
-      <header className="header">
-        <img src={KashLogo} height="80" alt="Department Of Computer Science" />
-        <Link to="/">Home</Link>
-        <Link to="/Carts">Carts</Link>
-        <Link to="/About">About</Link>
-        <Link to="/login">
-          <button className="sign-in-button">Sign In</button>
-        </Link>
-        <div className="search-container">
+       <header className="header">
+      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
+      <Link to="/">Home</Link>
+      
+      <Link to="/About">About</Link>
+      <Link to="/login">
+        <button className="sign-in-button">Sign In</button>
+      </Link>
+      <div className="cart-container"><Link to="/Carts" className="cart-text-link">
+        <img src={CartIcon} alt="Cart" className="cart-icon" />
+        {totalQuantity > 0 && (
+          <span className="cart-count">{totalQuantity}</span>
+        )}
+        Carts
+      </Link></div>
+      <div className="search-container">
           <input
             type="text"
             className="search-input"
@@ -95,16 +106,8 @@ const Carts = () => {
             <img src={SearchIcon} alt="Search" />
           </button>
         </div>
-        <div className="cart-wrapper">
-          <Link to="/Carts" className="cart-text-link">
-            <img src={CartIcon} alt="Cart" className="cart-icon" />
-            {quantities.reduce((sum, qty) => sum + qty, 0) > 0 && (
-              <span className="cart-count">{quantities.reduce((sum, qty) => sum + qty, 0)}</span>
-            )}
-            Carts
-          </Link>
-        </div>
-      </header>
+     
+    </header>
 
       <div className="cart-content-custom">
         <div className="card-container-custom">

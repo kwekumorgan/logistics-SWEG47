@@ -72,11 +72,13 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  width: 50px;
 }
 
 .footer .footer-search-button img {
   width: 18px;
   height: 18px;
+  margin-left: 30px;
 }
 
 .footer .footer-links {
