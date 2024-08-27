@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ProductDetailPage from './components/ProductDetailPage'; // Rename this for clarity
 import Payment from './components/Payment';
@@ -20,7 +19,7 @@ function App() {
   return (
     <CartProvider>
       <div className="App">
-        <Navbar />
+    
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetailPage />} /> 
