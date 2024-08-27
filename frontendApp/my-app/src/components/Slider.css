@@ -76,7 +76,7 @@ video::-webkit-media-controls-panel {
 
 @media (max-width: 768px) {
   .slider-wrapper {
-    height: 50vh; /* Decrease height for small screens */
+    height: 48vh; /* Decrease height for small screens */
   }
   .text {
     font-size: 32px; /* Adjust text size for smaller screens */
@@ -94,7 +94,7 @@ video::-webkit-media-controls-panel {
 
 @media (max-width: 480px) {
   .slider-wrapper {
-    height: 40vh; /* Decrease height for very small screens */
+    height: 36vh; /* Decrease height for very small screens */
   }
 
  .text {
@@ -174,9 +174,9 @@ video::-webkit-media-controls-panel {
     font-size: 7px;
     height: 44px;
 
-    width: 25%;
+    width: 20%;
 
-    top: 90%; 
+    top: 80%; 
   }
 }
 
