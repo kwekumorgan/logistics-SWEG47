@@ -143,7 +143,9 @@ video::-webkit-media-controls-panel {
 /* Hover */
 .button:hover {
   color: #FFFFFFFF;
+
   background: #15abff;
+
 }
 
 /* Pressed */
@@ -175,6 +177,7 @@ video::-webkit-media-controls-panel {
     top: 70%; 
   }
 }
+
 
 
 
