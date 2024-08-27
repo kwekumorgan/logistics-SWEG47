@@ -227,14 +227,20 @@
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
+  border-radius: 50%; /* Makes the button round */
+  padding: 5px 10px; /* Adjust the padding for normal size */
+  font-size: 16px; /* Adjust font size for better visibility */
+  width: 30px; /* Fixed width to ensure the button remains round */
+  height: 30px; /* Fixed height to ensure the button remains round */
   cursor: pointer;
 }
 
 .quantity-control button:disabled {
   background-color: #ddd;
   cursor: not-allowed;
+}
+.quantity-control button:Hover {
+  background-color: #E8E8E8;
 }
 
 /* Checkout button styling */

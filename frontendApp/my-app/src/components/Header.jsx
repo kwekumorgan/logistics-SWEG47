@@ -46,7 +46,7 @@ const Header = () => {
       <img src={KashLogo} height="80" alt="Department Of Computer Science" />
       <Link to="/">Home</Link>
       
-      <Link to="/About">About</Link>
+
       <Link to="/login">
         <button className="sign-in-button">Sign In</button>
       </Link>

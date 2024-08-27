@@ -101,7 +101,7 @@
 
 @media screen and (max-width: 480px) {
   .text-box {
-    flex: 1 1 calc(50% - 30px); /* Two items per row on mobile screens */
-    max-width: calc(50% - 5px); /* Ensure width aligns with flex basis */
+    flex: 1 1 calc(30% - 4px); /* Two items per row on mobile screens */
+    max-width: calc(30% - 4px); /* Ensure width aligns with flex basis */
   }
 }
