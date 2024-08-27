@@ -164,7 +164,8 @@
   }
 
   .cart-container {
-    margin-left: 10px;
+    margin-left: -10px;
+    margin-right: 20x;
   }
 
   .cart-count {
@@ -179,21 +180,37 @@
   .header {
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    padding: 6px;
   }
+
+  .header img {
+    margin-right: 0;
+    height: 50px; /* Adjust height for smaller screens */
+  }
+
+  .header a,
+  .sign-in-button {
+    margin-right: 10px;
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
   .cart-container {
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px; /* Maintain the same height */
   }
 
   .cart-count {
-    right: 80px;
-    top: 1px;
-    font-size: 8px;
-    padding: 2px 3px;
+    right: 10px; /* Adjust position to fit better */
+    top: -5px; /* Adjust vertical alignment */
+    font-size: 10px;
+    padding: 2px 4px;
   }
 
   .search-container {
     width: 100%;
     margin-top: 10px;
+    position: static; /* Remove absolute positioning */
   }
-
 }
