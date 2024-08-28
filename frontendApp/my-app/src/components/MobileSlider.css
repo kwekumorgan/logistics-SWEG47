@@ -115,17 +115,18 @@ body {
 
     .text1{
         font-size: 37px;
-        top: 179px;
+        top: 199px;
     }
     .text3{
         font-size: 12px;
-        top: 290px;
+        top: 315px;
     }
 
   
     .button1 {
       width: auto;
       padding: 0 20px;
-      left: 225px;
+      left: 215px;
+      top: 385px;
     }
   }
