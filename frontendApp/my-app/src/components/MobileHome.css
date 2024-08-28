@@ -1,0 +1,148 @@
+/* Mobile Home Screen */
+.mobile-home-screen {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* General padding */
+    width: 100%;
+    max-width: 480px; /* Limits maximum width */
+    margin: 0 auto; /* Centers content */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header */
+.mobile-home-screen .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    box-sizing: border-box; /* Prevent overflow */
+    overflow: hidden; /* Ensures content fits */
+}
+
+/* Slider */
+.mobile-home-screen .slider {
+    width: 100%;
+    overflow: hidden; /* Prevents overflow */
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+/* Slider Images */
+.mobile-home-screen .slider img {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Rounds the corners */
+    display: block; /* Removes any potential extra space */
+}
+
+/* Content Section */
+.mobile-home-screen .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box; /* Prevent overflow */
+    overflow-x: hidden; /* Prevents horizontal overflow */
+}
+
+/* Product Items */
+.mobile-home-screen .product-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-sizing: border-box; /* Prevent overflow */
+    overflow: hidden; /* Ensures content fits */
+}
+
+/* Product Image */
+.mobile-home-screen .product-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block; /* Removes any potential extra space */
+}
+
+/* Product Info */
+.mobile-home-screen .product-info {
+    flex: 1;
+    margin-left: 10px;
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+/* Product Name */
+.mobile-home-screen .product-info .product-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #171A1F;
+    margin-bottom: 5px;
+    white-space: nowrap; /* Prevents text overflow */
+    overflow: hidden; /* Ensures text does not overflow */
+    text-overflow: ellipsis; /* Adds ellipsis for overflow text */
+}
+
+/* Product Price */
+.mobile-home-screen .product-info .product-price {
+    font-size: 12px;
+    color: #15ABFF;
+    white-space: nowrap; /* Prevents text overflow */
+    overflow: hidden; /* Ensures text does not overflow */
+    text-overflow: ellipsis; /* Adds ellipsis for overflow text */
+}
+
+/* Footer */
+.mobile-home-screen .footer {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #8E94A0;
+    box-sizing: border-box; /* Prevent overflow */
+    overflow: hidden; /* Ensures content fits */
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 480px) {
+    .mobile-home-screen {
+        padding: 5px; /* Less padding for smaller screens */
+    }
+
+    .mobile-home-screen .header {
+        flex-direction: column; /* Stacks header elements */
+        padding: 8px; /* Less padding */
+    }
+
+    .mobile-home-screen .slider img {
+        height: auto; /* Maintains image ratio */
+    }
+
+    .mobile-home-screen .product-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .mobile-home-screen .product-item img {
+        width: 60px;
+        height: 60px; /* Smaller images for smaller screens */
+        margin-bottom: 10px; /* Adds spacing between image and text */
+    }
+
+    .mobile-home-screen .product-info .product-name,
+    .mobile-home-screen .product-info .product-price {
+        font-size: 12px; /* Smaller text size */
+    }
+
+    .mobile-home-screen .footer {
+        font-size: 10px; /* Smaller font size for footer */
+    }
+}
