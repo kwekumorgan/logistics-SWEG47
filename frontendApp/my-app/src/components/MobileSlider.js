@@ -27,8 +27,7 @@ const MobileSlider = ({ onNavigateToProduct }) => {
           <div className="overlay"></div>
           <div className="text1">Secure Your Seals With Confidence</div>
           <div className="text3">Reliable sealing solutions for every shipping need.</div>
-          <button className="button1" onClick={onNavigateToProduct}>Shop Now
-          </button>
+          <button className="button1" onClick={onNavigateToProduct}>Shop Now</button>
         </div>
       </Slider2>
 
