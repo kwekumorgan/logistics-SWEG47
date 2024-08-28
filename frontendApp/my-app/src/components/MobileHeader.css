@@ -41,9 +41,13 @@
 
 /* Search Textbox */
 .textbox {
-    position: relative;
-    width: 100%;
-    margin: 10px 0;
+    position: fixed; /* Changed from relative to fixed */
+    top: 80px; /* Position from the top */
+    left: 20px; /* Position from the left */
+    right: 20px; /* Position from the right */
+    margin: 0 auto; /* Center the textbox */
+    z-index: 1000; /* Ensure it's above other elements */
+    width: calc(100% - 40px); /* Adjusted width to accommodate the screen padding */
 }
 
 .textbox input {
@@ -79,7 +83,6 @@
 .textbox input:focus {
     outline: none; /* Remove default focus outline */
     border-color: #15ABFF; /* Border color change on focus */
-    padding: 0 16px; /* Adjust padding */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
 }
 
@@ -116,9 +119,10 @@
     cursor: pointer;
     background: #f8f9fa;
     border-radius: 4px;
-    margin: 0 3px; /* Reduce margin to fit items */
+    margin: 51px 3px; /* Reduce margin to fit items */
     text-decoration: none; /* Remove the default link underline */
     border-bottom: 4px solid transparent; /* Initial state with no border */
+    margin-bottom: 1px;
 }
 
 /* Header Menu - Item Hover Effect */
