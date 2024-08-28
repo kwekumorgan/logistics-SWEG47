@@ -62,6 +62,7 @@
     border-style: solid;
     outline: none;
     box-sizing: border-box; /* Ensure padding does not affect width */
+   
 }
 
 .textbox .icon {
@@ -78,8 +79,8 @@
 @media (max-width: 480px) {
     .textbox input {
         width: 100%; /* Maintains full width */
-        height: 42px; /* Maintains height */
-        font-size: 16px; /* Consistent font size */
+        height: 40px; /* Maintains height */
+        font-size: 13px; /* Consistent font size */
         box-sizing: border-box; /* Ensures the width remains consistent when clicked */
     }
 }
@@ -151,7 +152,7 @@
 
     .textbox input {
         height: 40px; /* Reduce height for smaller screens */
-        font-size: 14px; /* Adjust font size for better readability */
+        font-size: 13px; /* Adjust font size for better readability */
     }
 
     .header-menu {

@@ -4,7 +4,6 @@
     flex-direction: column;
     padding: 10px; /* General padding */
     width: 100%;
-    max-width: 480px; /* Limits maximum width */
     margin: 0 auto; /* Centers content */
     box-sizing: border-box; /* Include padding and border in the element's total width */
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -31,13 +30,7 @@
     box-sizing: border-box; /* Prevent overflow */
 }
 
-/* Slider Images */
-.mobile-home-screen .slider img {
-    width: 100%;
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 8px; /* Rounds the corners */
-    display: block; /* Removes any potential extra space */
-}
+
 
 /* Content Section */
 .mobile-home-screen .content-section {
@@ -113,18 +106,12 @@
 
 /* Media Query for Mobile View */
 @media (max-width: 480px) {
-    .mobile-home-screen {
-        padding: 5px; /* Less padding for smaller screens */
-    }
+    
+     
 
-    .mobile-home-screen .header {
-        flex-direction: column; /* Stacks header elements */
-        padding: 8px; /* Less padding */
-    }
+    
 
-    .mobile-home-screen .slider img {
-        height: auto; /* Maintains image ratio */
-    }
+    
 
     .mobile-home-screen .product-item {
         flex-direction: column; /* Stack items vertically */
@@ -137,12 +124,5 @@
         margin-bottom: 10px; /* Adds spacing between image and text */
     }
 
-    .mobile-home-screen .product-info .product-name,
-    .mobile-home-screen .product-info .product-price {
-        font-size: 12px; /* Smaller text size */
-    }
-
-    .mobile-home-screen .footer {
-        font-size: 10px; /* Smaller font size for footer */
-    }
+    
 }
