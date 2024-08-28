@@ -154,7 +154,7 @@
 
     .header-menu .header-menu-item {
         padding: 6px 0; /* Reduce padding for smaller screens */
-        font-size: 11px; /* Adjust font size for better readability */
+        font-size: 10px; /* Adjust font size for better readability */
         margin: 5px 0; /* Maintain margin for spacing */
     }
 }
