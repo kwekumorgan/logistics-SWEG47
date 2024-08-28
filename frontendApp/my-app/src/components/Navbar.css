@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
 /* Style for the navbar */
 .ribbon {
-  background-color: white;
+  background:url(../Media/arno22.jpg);
+  background-size: cover;
   overflow: hidden;
   display: flex;
   justify-content: center; /* Center the content horizontally */
@@ -11,10 +13,12 @@
 }
 
 .ribbon h1 {
-  color: #15abff; /* Set the text color to white */
+  color: white; /* Set the text color to white */
   text-align: center; /* Center the text */
   margin: 0; /* Remove default margin */
   font-size: small;
+  font-family: Lexend;
+
 }
 
 .ribbon a {

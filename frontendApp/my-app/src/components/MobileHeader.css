@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+/* Mobile Header Container */
+.mobile-header-container {
+    position: relative;
+    width: 100%;
+    background: #f8f9fa; /* Light background for clarity */
+    padding: 10px 20px; /* Adjusted padding for better spacing */
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* TextB */
+.textB img {
+    height: 27px;
+}
+
+/* Shopping cart icon */
+.cart-icon {
+    width: 28px;
+    height: 28px;
+    margin-left: 10px;
+    fill: #8E94A0;
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+/* Search Textbox */
+.textbox {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.textbox input {
+    width: 100%;
+    height: 44px;
+    padding-left: 44px;
+    padding-right: 16px;
+    font-family:  Manrope, sans-serif; /* Ensure fallback font */
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    background: #ffffff;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #BDC1CA;
+    border-style: solid;
+    outline: none;
+}
+
+.textbox .icon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    fill: #171A1F;
+}
+
+/* Header Menu */
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+/* Header Menu - Item */
+.header-menu .header-menu-item {
+    flex: 1;
+    text-align: center;
+    padding: 9px 0;
+    font-family: Manrope, sans-serif; /* Ensure fallback font */
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #565D6D;
+    cursor: pointer;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin: 0 5px;
+    text-decoration: none; /* Remove the default link underline */
+    /* Smooth transition effect */
+    border-bottom: 4px solid transparent; /* Initial state with no border */
+    
+}
+
+/* Header Menu - Item Hover Effect */
+.header-menu .header-menu-item:hover {
+    color: #15ABFF; /* Text turns blue */
+    border-bottom: 4px solid #15ABFF; /* Bottom border turns blue */
+}
+
+/* Header Menu - Selected item */
+.header-menu .header-menu-item.selected {
+    font-weight: 700;
+    color: #15ABFF;
+    background: #ffffff; /* Ensure the background contrasts with the text color */
+    border-bottom: 4px solid #15ABFF; /* Maintain border for selected item */
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 480px) {
+    .mobile-header-container {
+        padding: 10px 10px; /* Adjust padding for very small screens */
+    }
+
+    .textB img {
+        height: 24px; /* Reduce image height for smaller screens */
+    }
+
+    .cart-icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 5px; /* Reduce margin for tighter spacing */
+    }
+
+    .cart-count {
+        top: -3px;
+        right: -3px;
+        font-size: 10px;
+        padding: 2px 4px;
+    }
+
+    .textbox input {
+        height: 40px; /* Reduce height for smaller screens */
+        font-size: 14px; /* Adjust font size for better readability */
+    }
+
+    .header-menu {
+        flex-direction: column; /* Stack menu items vertically */
+        margin-top: 5px;
+    }
+
+    .header-menu .header-menu-item {
+        padding: 8px 0; /* Reduce padding for smaller screens */
+        font-size: 12px; /* Adjust font size for better readability */
+        margin: 5px 0; /* Maintain margin for spacing */
+    }
+}

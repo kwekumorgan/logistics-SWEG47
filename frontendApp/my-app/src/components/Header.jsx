@@ -12,7 +12,8 @@ const Header = () => {
   useEffect(() => {
     function handleScroll() {
       const header = document.querySelector('.header');
-      if (window.scrollY > 0) {
+      const navbarHeight = document.querySelector('.ribbon').offsetHeight;
+      if (window.scrollY > navbarHeight) {
         header.style.position = 'fixed';
         header.style.top = '0';
       } else {
