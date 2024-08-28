@@ -75,6 +75,14 @@
     fill: #171A1F;
 }
 
+/* To prevent focus issues */
+.textbox input:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #15ABFF; /* Border color change on focus */
+    padding: 0 16px; /* Adjust padding */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+}
+
 /* Media Queries for Mobile View */
 @media (max-width: 480px) {
     .textbox input {
