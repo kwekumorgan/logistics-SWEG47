@@ -2,7 +2,7 @@ import React from 'react';
 import './MobileHeader.css'; // Separate CSS file for mobile header
 import { Link } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
-import SearchIcon from '../Media/Search.png';
+import SearchIcon2 from '../Media/Search.png';
 import CartIcon from '../Media/carts1.png';
 import KashLogo from '../Media/KASHLOGO1.jpg';
 
@@ -40,7 +40,7 @@ const MobileHeader = () => {
         onKeyPress={handleKeyPress}
          placeholder="Search Products" />
         <img
-          src={SearchIcon}
+          src={SearchIcon2}
           alt="Search"
           className="icon left"
           onClick={handleSearch}

@@ -41,13 +41,9 @@
 
 /* Search Textbox */
 .textbox {
-    position: fixed; /* Changed from relative to fixed */
-    top: 80px; /* Position from the top */
-    left: 20px; /* Position from the left */
-    right: 20px; /* Position from the right */
-    margin: 0 auto; /* Center the textbox */
-    z-index: 1000; /* Ensure it's above other elements */
-    width: calc(100% - 40px); /* Adjusted width to accommodate the screen padding */
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
 }
 
 .textbox input {
@@ -88,11 +84,23 @@
 
 /* Media Queries for Mobile View */
 @media (max-width: 480px) {
+    .textbox{  width: 100%;
+        
+        position: static;}
     .textbox input {
         width: 100%; /* Maintains full width */
         height: 40px; /* Maintains height */
         font-size: 13px; /* Consistent font size */
         box-sizing: border-box; /* Ensures the width remains consistent when clicked */
+    }
+    .textbox .icon {
+        position: absolute;
+        top: 65.5px;
+        left: 15.5px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        fill: #171A1F;
     }
 }
 
@@ -119,10 +127,9 @@
     cursor: pointer;
     background: #f8f9fa;
     border-radius: 4px;
-    margin: 51px 3px; /* Reduce margin to fit items */
+    margin: 0 3px; /* Reduce margin to fit items */
     text-decoration: none; /* Remove the default link underline */
     border-bottom: 4px solid transparent; /* Initial state with no border */
-    margin-bottom: 1px;
 }
 
 /* Header Menu - Item Hover Effect */
@@ -147,6 +154,7 @@
 
     .textB img {
         height: 24px; /* Reduce image height for smaller screens */
+        
     }
 
     .cart-icon {
