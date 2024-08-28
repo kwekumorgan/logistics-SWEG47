@@ -14,6 +14,12 @@ const MobileHeader = () => {
     alert('Perform search operation');
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   // Calculate total quantity in the cart
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -30,7 +36,9 @@ const MobileHeader = () => {
       </div>
 
       <div className="textbox">
-        <input type="text" placeholder="Search Products" />
+        <input type="text"
+        onKeyPress={handleKeyPress}
+         placeholder="Search Products" />
         <img
           src={SearchIcon}
           alt="Search"
@@ -38,6 +46,10 @@ const MobileHeader = () => {
           onClick={handleSearch}
         />
       </div>
+
+
+
+
 
       <div className="header-menu">
         <Link to="/" className="header-menu-item">Home</Link>
