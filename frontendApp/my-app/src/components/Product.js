@@ -11,7 +11,7 @@ const TextBox = () => {
   };
 
   const renderCategory = (category) => (
-    <div className="category-section">
+    <div className="category-section" key={category.name}>
       <h2>{category.name}</h2>
       <div className="category-products">
         {category.products.map(product => (
@@ -27,9 +27,9 @@ const TextBox = () => {
 
   return (
     <div className="text-box-container">
-      {renderCategory({  products: product_data.boltSeals })}
-      {renderCategory({  products: product_data.cableSeals })}
-      {renderCategory({  products: product_data.plasticSeals })}
+      {renderCategory({ name: '', products: product_data.boltSeals })}
+      {renderCategory({ name: '', products: product_data.cableSeals })}
+      {renderCategory({ name: '', products: product_data.plasticSeals })}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
 import "./Header.css";
@@ -27,9 +27,32 @@ const regionLocations = {
   'Savannah': ['Damongo', 'Salaga']
 };
 
-const Carts = () => {
-  const { cart, removeFromCart, changeQuantity } = useCart();
-  const [locations, setLocations] = useState([]);
+
+  const Carts = () => {
+    const { cart, removeFromCart, changeQuantity } = useCart();
+    const [locations, setLocations] = useState([]);
+  
+    useEffect(() => {
+      function handleScroll() {
+        const header = document.querySelector('.header');
+        const navbarHeight = document.querySelector('.ribbon').offsetHeight || 0; // fallback if ribbon doesn't exist
+        if (window.scrollY > navbarHeight) {
+          header.classList.add('fixed-header');
+        } else {
+          header.classList.remove('fixed-header');
+        }
+      }
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+  
+
+  
+  
 
   const getSubtotal = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -49,6 +72,7 @@ const Carts = () => {
       handleSearch();
     }
   };
+  
 
   // Get categories of items in the cart
   const cartCategories = [...new Set(cart.map(item => item.category))];

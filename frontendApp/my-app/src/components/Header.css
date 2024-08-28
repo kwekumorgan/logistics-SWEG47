@@ -34,6 +34,17 @@
   
 }
 
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white; /* Ensure the header background doesn't overlap content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for clarity */
+}
+
+
 
 
 
@@ -129,7 +140,7 @@
   position: absolute;
   top: 0px; /* Adjust to align properly within the cart icon */
   right: 79px; /* Adjust to align with the cart icon */
-  background-color: #007bff;
+  background-color: #15abff;
   color: white;
   font-size: 12px;
   border-radius: 50%;
@@ -213,13 +224,14 @@
     margin-top: 10px;
     position: static; /* Remove absolute positioning */
   }
+  .search-button img {
+    width: 10px;
+    height: 10px;
+    margin-left: 20px;
+    position: absolute;
+    border: none;
+   
 }
-.search-button img {
-  width: 10px;
-  height: 10px;
-  margin-left: 20px;
-  position: absolute;
-  border: none;
- 
+
  
 }
