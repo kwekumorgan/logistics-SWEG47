@@ -102,7 +102,7 @@ body {
 @media (max-width: 480px) {
     .mobile-slider-wrapper {
       width: 100%;
-      height: auto; /* Adjust height as needed */
+      height: 600PX; /* Adjust height as needed */
     }
   
     .text1, .text3, .button1 {
