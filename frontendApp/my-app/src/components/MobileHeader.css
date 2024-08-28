@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 /* Mobile Header Container */
 .mobile-header-container {
     position: relative;
@@ -54,7 +52,7 @@
     height: 44px;
     padding-left: 44px;
     padding-right: 16px;
-    font-family:  Manrope, sans-serif; /* Ensure fallback font */
+    font-family: Manrope, sans-serif; /* Ensure fallback font */
     font-size: 16px;
     line-height: 26px;
     font-weight: 400;
@@ -82,27 +80,25 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 /* Header Menu - Item */
 .header-menu .header-menu-item {
-    flex: 1;
+    flex: 1; /* Allow items to shrink if needed */
     text-align: center;
-    padding: 9px 0;
+    padding: 5px 0; /* Reduced padding for smaller screens */
     font-family: Manrope, sans-serif; /* Ensure fallback font */
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 12px; /* Adjust font size for smaller screens */
+    line-height: 18px; /* Adjust line height */
     font-weight: 400;
     color: #565D6D;
     cursor: pointer;
     background: #f8f9fa;
     border-radius: 4px;
-    margin: 0 5px;
+    margin: 0 3px; /* Reduce margin to fit items */
     text-decoration: none; /* Remove the default link underline */
-    /* Smooth transition effect */
     border-bottom: 4px solid transparent; /* Initial state with no border */
-    
 }
 
 /* Header Menu - Item Hover Effect */
@@ -148,13 +144,14 @@
     }
 
     .header-menu {
-        flex-direction: column; /* Stack menu items vertically */
-        margin-top: 5px;
+        flex-direction: row; /* Keep menu items on the same line */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        padding: 0 5px; /* Add some horizontal padding */
     }
 
     .header-menu .header-menu-item {
-        padding: 6px 0; /* Reduce padding for smaller screens */
+        padding: 6px 0; /* Adjust padding for smaller screens */
         font-size: 11px; /* Adjust font size for better readability */
-        margin: 5px 0; /* Maintain margin for spacing */
+        margin: 0 2px; /* Reduce margin for tighter spacing */
     }
 }
