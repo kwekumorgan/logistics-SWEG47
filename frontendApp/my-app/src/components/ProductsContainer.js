@@ -1,15 +1,25 @@
-// src/components/ProductsContainer.jsx
 import React from 'react';
-import product_data from '../components/product_data'; // Import product data
-import './ProductsContainer.css'; // Ensure this file has the styling
+import product_data from '../components/product_data';
+import './ProductsContainer.css';
+import { useCart } from '../components/CartContext';
 
 const ProductsContainer = () => {
-  // Combine all product categories into a single array
+  const { addToCart } = useCart();
+
   const allProducts = [
     ...product_data.boltSeals,
     ...product_data.cableSeals,
     ...product_data.plasticSeals,
   ];
+
+  const handleAddToCart = (product, event) => {
+    addToCart(product);
+    const button = event.currentTarget;
+    button.classList.add('clicked');
+    setTimeout(() => {
+      button.classList.remove('clicked');
+    }, 200);
+  };
 
   return (
     <div className="nd-container">
@@ -21,7 +31,12 @@ const ProductsContainer = () => {
             <div className="product-name text">{product.product_name}</div>
             <div className="product-description text">{product.description}</div>
             <div className="product-price text">{`${product.currency} ${product.price}`}</div>
-            <button className="button">Add to Cart</button>
+            <button
+              className="button"
+              onClick={(event) => handleAddToCart(product, event)}
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
