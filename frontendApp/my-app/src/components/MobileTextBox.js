@@ -35,11 +35,12 @@ const MobileTextBox = () => {
           className="container32-image"
         />
       </div>
-
       <div className="nd-container">
         
         <ProductsContainer /> {/* Use ProductsContainer here */}
       </div>
+
+      
     </div>
   );
 };
