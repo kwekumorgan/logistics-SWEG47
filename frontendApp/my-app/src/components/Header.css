@@ -213,8 +213,8 @@
   }
 
   .cart-count {
-    right: 20px; /* Adjust position to fit better */
-    top: -5px; /* Adjust vertical alignment */
+    right: 60px; /* Adjust position to fit better */
+    top: -1px; /* Adjust vertical alignment */
     font-size: 10px;
     padding: 2px 4px;
   }

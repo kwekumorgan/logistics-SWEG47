@@ -26,7 +26,7 @@ const MobileHeader = () => {
   return (
     <div className="mobile-header-container">
       <div className="container">
-        <span className="textB"><img src={KashLogo} height="80" alt="Department Of Computer Science" /></span>
+        <span className="textB"><img src={KashLogo} height="80" alt="Kash Logo" /></span>
         <Link to="/Carts" className="cart-text-link">
           <img src={CartIcon} alt="Cart" className="cart-icon" />
           {totalQuantity > 0 && (
