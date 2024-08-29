@@ -84,9 +84,12 @@
 
 /* Media Queries for Mobile View */
 @media (max-width: 480px) {
-    .textbox{  width: 100%;
-        
-        position: static;}
+    .textbox{  
+        width: 100%;
+        margin-top: 10px;
+        position: static;
+    }
+
     .textbox input {
         width: 100%; /* Maintains full width */
         height: 40px; /* Maintains height */
@@ -153,7 +156,7 @@
     }
 
     .textB img {
-        height: 24px; /* Reduce image height for smaller screens */
+        height: 25px; /* Reduce image height for smaller screens */
         
     }
 
@@ -164,8 +167,8 @@
     }
 
     .cart-count1 {
-        top: 20px;
-        right: 100px;
+        top: 5px;
+        right: 24px;
         font-size: 10px;
         padding: 2px 4px;
     }
@@ -186,4 +189,8 @@
         font-size: 11px; /* Adjust font size for better readability */
         margin: 0 2px; /* Reduce margin for tighter spacing */
     }
+
+    .textbox{width: 100%;
+        margin-top: 10px;
+        position: static; }
 }

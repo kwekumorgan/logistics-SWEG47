@@ -1,0 +1,75 @@
+/* Mobile TextBox Styles */
+
+/* Product Title */
+.mobile-products-title {
+    margin-top: 20px; /* Add some margin to create space from the slider */
+    margin-left: -320px;
+    font-family: Lexend, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #000000FF;
+    position: relative; /* Changed from absolute to relative */
+  }
+  
+  /* Container for Product TextBox */
+  .container32 {
+    margin-top: 16px; /* Add margin to separate from the title */
+    margin-left: 30px;
+    width: 90%;
+    height: 185px;
+    background: #FFFFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f;
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Space between text and image */
+    padding: 12px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in height/width */
+    position: relative; /* Changed from absolute to relative */
+  }
+  
+  /* Text within the Container */
+  .container32-text {
+    width: 202px; /* Fixed width for the text */
+    font-family: Lexend, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #171A1FFF;
+    margin-left: -55px; /* Add some margin to separate from image */
+    align-self: flex-start; /* Align text to the top of the container */
+  }
+  
+  /* Image within the Container */
+  .container32-image {
+    width: 112px;
+    height: 149px;
+    border-radius: 3px;
+    object-fit: cover; /* Ensure image fits within the container */
+  }
+  
+
+   /* Mobile-specific styles */
+@media (max-width: 480px) {
+
+    .mobile-products-title {
+        margin-left: -150px;
+    }
+
+    .container32{
+        width: 350px;
+        height: 173px;
+    }
+
+    .container32-text {
+        margin-right: 12px;
+    }
+
+
+
+
+
+
+
+}
