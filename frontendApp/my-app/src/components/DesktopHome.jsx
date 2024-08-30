@@ -22,7 +22,7 @@ const Home = () => {
   
 
   return (
-    <div className='Home'>
+    <div className='DesktopHome'>
       <Header />
       <ImageSlider onNavigateToProduct={handleNavigateToProduct} />
       <div ref={productSectionRef} className="products-container">

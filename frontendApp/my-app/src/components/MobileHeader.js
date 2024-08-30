@@ -10,13 +10,13 @@ const MobileHeader = () => {
   const { cart } = useCart();
 
   // Handle search functionality (currently just alerts)
-  const handleSearch = () => {
+  const handleSearch1 = () => {
     alert('Perform search operation');
   };
 
-  const handleKeyPress = (event) => {
+  const handleKeyPress1 = (event) => {
     if (event.key === 'Enter') {
-      handleSearch();
+      handleSearch1();
     }
   };
 
@@ -37,13 +37,13 @@ const MobileHeader = () => {
 
       <div className="textbox">
         <input type="text"
-        onKeyPress={handleKeyPress}
+        onKeyPress={handleKeyPress1}
          placeholder="Search Products" />
         <img
           src={SearchIcon2}
           alt="Search"
           className="icon left"
-          onClick={handleSearch}
+          onClick={handleSearch1}
         />
       </div>
 

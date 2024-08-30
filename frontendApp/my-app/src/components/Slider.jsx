@@ -28,19 +28,22 @@ const ImageSlider = ({ onNavigateToProduct }) => {
     <div className="slider-wrapper">
       <Slider {...settings}>
         <div className="image-container">
+          
           <img src={image} alt="Barret Ward" className="full-screen-image" />
           <div className="texta">Secure Your Seals With Confidence</div>
           <div className='text2'>Reliable sealing solutions for every shipping need.</div>
-          <button className="button" onClick={onNavigateToProduct}>Shop Now</button>
+          <button className="button12" onClick={onNavigateToProduct}>Shop Now</button>
         </div>
         <div className="image-container">
           <img src={image2} alt="Akwele" className="full-screen-image" />
-          <div className="texta">Safeguard Your Shipments With Kash Logistics</div>
+          <div className='desktopOverlay'></div>
+          <div className="texta">Kash Logistics Is Here for You</div>
           <div className='text2'>Reliable sealing solutions for every shipping need.</div>
-          <button className="button" onClick={navigateToAbout}>Learn More</button>
+          <button className="button12" onClick={navigateToAbout}>Learn More</button>
         </div>
         <div className="video-container">
           <video src={video} autoPlay loop muted playsInline className="full-screen-video" />
+          <div className='desktopOverlay'></div>
           <div className="texta">Secure Your Seals With Confidence</div>
           <div className='text2'>Reliable sealing solutions for every shipping need.</div>
         </div>
