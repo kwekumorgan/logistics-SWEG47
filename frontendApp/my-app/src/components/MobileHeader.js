@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './MobileHeader.css'; // Separate CSS file for mobile header
 import { Link } from 'react-router-dom';
-import { useCart } from '../components/CartContext';
+import { useCart } from './CartContext';
 import SearchIcon2 from '../Media/Search.png';
 import CartIcon from '../Media/carts1.png';
 import KashLogo from '../Media/KASHLOGO1.jpg';
 
 const MobileHeader = () => {
   const { cart } = useCart();
+
+  useEffect(() => {
+    function handleScroll() {
+      const mobileheader = document.querySelector('.mobile-header-container'); // Updated to correct class
+      const navbarHeight = document.querySelector('.ribbon')?.offsetHeight || 0;
+      if (window.scrollY > navbarHeight) {
+        mobileheader.style.position = 'fixed';
+        mobileheader.style.top = '0';
+        mobileheader.style.zIndex = '1000'; // Ensure it stays on top
+        mobileheader.style.width = '100%'; // Ensure it doesn't shrink when fixed
+      } else {
+        mobileheader.style.position = 'relative';
+        mobileheader.style.top = '';
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   // Handle search functionality (currently just alerts)
   const handleSearch1 = () => {
@@ -46,10 +68,6 @@ const MobileHeader = () => {
           onClick={handleSearch1}
         />
       </div>
-
-
-
-
 
       <div className="header-menu">
         <Link to="/" className="header-menu-item">Home</Link>
