@@ -27,7 +27,7 @@
   }
   
   /* Product Container */
-  .Products-container {
+  .Products-container32 {
     width: calc(50% - 10px); /* Default: 2 products per row */
     box-sizing: border-box; /* Include padding and border in width */
     background-color: #fff; /* White background */
@@ -40,7 +40,18 @@
   align-items: center;
   justify-content: space-between; /* Ensure content is spaced evenly */
   position: relative; /* Allow absolute positioning within the container */
+
+  
   }
+  .products-container32 {
+  margin-top: 20px;
+  text-align: center;
+  justify-content: left;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #E8E8E8;
+}
   
   .image {
     width: 100%;
@@ -50,14 +61,14 @@
     border-radius: 10px; /* Rounded corners for the image */
   }
   
-  .Products-container .product-name,
-  .Products-container .product-description,
-  .Products-container .product-price {
+  .Products-container32 .product-name,
+  .Products-container32 .product-description,
+  .Products-container32 .product-price {
     font-family: Manrope, sans-serif;
     margin: 12px; /* Margin for spacing */
   }
   
-  .Products-container .product-name {
+  .Products-container32 .product-name {
     font-size: 16px;
     line-height: 22px;
     font-weight: 700;
@@ -65,20 +76,20 @@
     text-align: center;
   }
   
-  .Products-container .product-description {
+  .Products-container32 .product-description {
     font-size: 12px;
     line-height: 20px;
     font-weight: 400;
   }
   
-  .Products-container .product-price {
+  .Products-container32 .product-price {
     font-size: 12px;
     line-height: 20px;
     font-weight: 400;
     color: #9095A1;
   }
   
-  .button {
+  .button32 {
     width: 100%; 
     height: 30px;
     margin-top: 10px;
@@ -96,19 +107,26 @@
     bottom: 10px; /* Align button at the bottom with some padding */
     left: 50%;
     transform: translateX(-50%);
+    transition: all 0.2s ease; /* Smooth transition for press effect */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Default shadow */
+
   }
   
-  .button:hover {
-    color: #008AD9;
-    background: #FFFFFF;
+  .button32:hover {
+    color: #FFFFFF;
+    background: #0077BC;
   }
   
-  .button:active {
+  .button32:active {
     color: #0077BC;
     background: #FFFFFF;
+    transform: translateX(-50%) translateY(2px); /* Move button down slightly */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2) inset; /* Inset shadow to simulate press */
+    padding-top: 2px; /* Adjust padding to make button look pressed */
+
   }
   
-  .button:disabled {
+  .button32:disabled {
     opacity: 0.4;
     cursor: not-allowed;
   }
@@ -117,7 +135,7 @@
 
 /* For screens of 768px and below */
 @media (max-width: 768px) {
-    .button {
+    .button32 {
         width: 80%;
         height: 35px;
         font-size: 14px;
@@ -129,7 +147,7 @@
 
 /* For screens of 480px and below */
 @media (max-width: 480px) {
-    .button {
+    .button32 {
         width: 80%;
         height: 40px;
         font-size: 16px;
@@ -151,13 +169,13 @@
       }
 
     
-    .Products-container {
+    .Products-container32 {
       width: calc(50% - 10px); /* 2 products per row */
       height: 380px;
       margin-bottom: 10px; /* Add space between product rows */
       
     }
-    .Products-container .product-description {
+    .Products-container32 .product-description {
         font-size: 12px;
         line-height: 30px;
         font-weight: 400;
@@ -165,12 +183,12 @@
         line-height: 10px;
         margin-top: 30px;
       }
-      .Products-container .product-name{
+      .Products-container32 .product-name{
         margin-left: 10px;
         line-height: 10px;
       }
 
-      .Products-container .product-price {
+      .Products-container32 .product-price {
         font-size: 12px;
         line-height: 50px;
         font-weight: 400;
@@ -183,7 +201,7 @@
   
   /* For screens of 480px and below */
   @media (max-width: 480px) {
-    .Products-container {
+    .Products-container32 {
         width: calc(50% - 5px); /* 2 products per row */
         height: 330px;
       margin-bottom: 10px; /* Add space between product rows */
@@ -198,7 +216,7 @@
       }
       
 
-    .Products-container .product-description {
+    .Products-container32 .product-description {
         font-size: 11px;
         line-height: 20px;
         font-weight: 400;
@@ -206,14 +224,14 @@
         margin-top: 40px;
         text-align: left;
       }
-      .Products-container .product-name{
+      .Products-container32 .product-name{
         margin-left: 30px;
         font-size: 15px;
         line-height: 10px;
         text-align: left;
       }
 
-      .Products-container .product-price {
+      .Products-container32 .product-price {
         font-size: 12px;
         line-height: 135px;
         font-weight: 400;

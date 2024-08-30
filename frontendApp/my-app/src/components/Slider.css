@@ -21,7 +21,7 @@
   line-height: 65px;
   font-weight: 700;
   color: #FFFFFF;
-  z-index: 10; /* Ensure text is on top */
+  z-index: 20; /* Ensure text is on top */
 }
 
 
@@ -37,6 +37,7 @@
   line-height: 180px;
   font-weight: 400;
   color: #FFFFFFFF;
+  z-index:20; 
   }
 
 /* Image and video container styles */
@@ -54,6 +55,15 @@
   border-radius: 0px;
 }
 
+.desktopOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Match the container width */
+  height: 100%; /* Match the container height */
+  background: #171A1F66; /* Overlay color */
+  z-index: 1; /* Ensure overlay is above the image */
+}
 /* Hide the download notification */
 video::-internal-media-controls-download-button {
   display: none;
@@ -116,7 +126,7 @@ video::-webkit-media-controls-panel {
 }
 
 /* Button styles */
-.button {
+.button12 {
   position: absolute;
   top: 55%; /* Adjust as needed */
   left: 50%;

@@ -7,7 +7,6 @@ import image3 from '../Media/MobilePic.png';
 
 const MobileSlider = ({ onNavigateToProduct }) => {
       
-  
   const settings1 = {
     dots: true,
     infinite: true,
@@ -16,6 +15,8 @@ const MobileSlider = ({ onNavigateToProduct }) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    adaptiveHeight: true,
+
   };
 
   return (
@@ -29,7 +30,12 @@ const MobileSlider = ({ onNavigateToProduct }) => {
           <div className="text3">Reliable sealing solutions for every shipping need.</div>
           <button className="button1" onClick={onNavigateToProduct}>Shop Now</button>
         </div>
+
+        
+      
       </Slider2>
+
+      
 
    
     </div>
