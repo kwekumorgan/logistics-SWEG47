@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+/* Ensure the root container does not overflow */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+  
+  /* Slider Container */
+  .mobile-slider-wrapper {
+    position: relative;
+    width: 100%; /* Match the overlay and image sizes */
+    height: 600px; /* Match the overlay and image sizes */
+    overflow: hidden;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+  
+  /* Image Styling */
+  .full-screen-image {
+    width: 100%;
+    height: auto;
+    object-fit:fill; /* Ensures the image covers the container without distortion */
+    border-radius: 1px;
+  }
+  
+  /* Overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Match the container width */
+    height: 100%; /* Match the container height */
+    background: rgba(23, 26, 31, 0.4); /* Overlay color */
+    z-index: 1; /* Ensure overlay is above the image */
+  }
+
+
+  
+  
+  /* Main Text */
+  .text1 {
+    position: absolute;
+    top: 169px;
+    left: 120px;
+    width: 350px;
+    height: 96px;
+    font-family: Lexend;
+    font-size: 38px;
+    line-height: 48px;
+    font-weight: 700;
+    color: #FFFFFF;
+    z-index: 2; /* Ensure text is above the overlay */
+  }
+  
+  /* Subtext */
+  .text3 {
+    position: absolute;
+    top: 280px;
+    left: 125px;
+    width: 350px;
+    height: 44px;
+    font-family: Manrope;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #FFFFFF;
+    z-index: 2; /* Ensure text is above the overlay */
+  }
+  
+  /* Button */
+  .button1 {
+    position: absolute;
+    top: 345px;
+    left: 230px;
+    height: 36px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #FFFFFF;
+    background: #15ABFF;
+    opacity: 1;
+    border: none;
+    border-radius: 4px;
+    z-index: 2; /* Ensure button is above the overlay */
+    width: 20%;
+  }
+  
+  /* Button Hover and Press States */
+  .button1:hover {
+    background: #008AD9;
+  }
+  
+  .button1:active {
+    background: #0077BC;
+  }
+  
+  .button1:disabled {
+    opacity: 0.4;
+  }
+  
+  /* Mobile-specific styles */
+@media (max-width: 480px) {
+    .mobile-slider-wrapper {
+      width: 100%;
+      height: 387px; /* Adjust height as needed */
+      overflow: hidden;
+    }
+  
+    .text1, .text3, .button1 {
+      left: 60%;
+      transform: translateX(-60%);
+      text-align: center;
+    }
+
+    .text1{
+        font-size: 37px;
+        top: 133px;
+    }
+    .text3{
+        font-size: 12px;
+        top: 222px;
+    }
+
+  
+    .button1 {
+      width: auto;
+      padding: 0 20px;
+      left: 210px;
+      top: 258px;
+    }
+  }

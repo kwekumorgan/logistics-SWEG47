@@ -48,7 +48,7 @@
 
 .text-box {
   text-align: center;
-  border-radius: 12px;
+  border-radius: 0px;
   overflow: hidden;
   flex: 0 0 30%; /* Adjust to show 5 products in one screen */
   max-width: 18.5%; /* Adjust to 20% for 5 products */

@@ -343,4 +343,55 @@
   .similar-product-card {
     width: calc(50% - 20px); /* Two items per row */
   }
+
+  .card_header-custom h2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px; /* No extra space between header and price */
+    margin-left: -35px;
+    margin-top: -3px;
+    margin-bottom: 20px;
+    top: -30px; /* Align with the top of the card image */
+    
+ 
+   
+  }
+  
+  .card_header-custom p {
+    font-size: 13px;
+    text-align: left;
+    color: black;
+    margin: -13px 0;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 50px; /* Adjusted spacing for alignment */
+    margin-left: -35px;
+    margin-bottom: -25px;
+    margin-right: -25px;
+  }
+
+  /* Price alignment */
+.card_header-custom .price {
+  font-size: 20px;
+  color: #007bff;
+  position: absolute;
+  top: -30px; /* Align with the top of the card image */
+  right: 20px;
+}
+
+/* Quantity control buttons */
+.quantity-control {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  margin-right: -25px;
+  margin-top: -5px;
+}
 }

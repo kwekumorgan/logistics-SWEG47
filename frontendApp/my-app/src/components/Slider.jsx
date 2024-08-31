@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import './Slider.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import video from '../Media/VIDEO.mp4';
 import image from '../Media/BarretWard1.jpg';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
+import image2 from '../Media/Akwele.png';
 
-const ImageSlider = () => {
+const ImageSlider = ({ onNavigateToProduct }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -19,24 +19,32 @@ const ImageSlider = () => {
     adaptiveHeight: true,
   };
 
-  const navigate = useNavigate(); // Use useNavigate for navigation
+  const navigate = useNavigate();
 
   const navigateToAbout = () => {
-    navigate('/about'); // Use navigate instead of history.push
+    navigate('/about');
   };
-
   return (
     <div className="slider-wrapper">
       <Slider {...settings}>
         <div className="image-container">
+          
           <img src={image} alt="Barret Ward" className="full-screen-image" />
-          <div className="text">Secure Your Seals With Confidence</div>
+          <div className="texta">Secure Your Seals With Confidence</div>
           <div className='text2'>Reliable sealing solutions for every shipping need.</div>
-          <button className="button" onClick={navigateToAbout}>Learn More</button>
+          <button className="button12" onClick={onNavigateToProduct}>Shop Now</button>
+        </div>
+        <div className="image-container">
+          <img src={image2} alt="Akwele" className="full-screen-image" />
+          <div className='desktopOverlay'></div>
+          <div className="texta">Kash Logistics Is Here for You</div>
+          <div className='text2'>Reliable sealing solutions for every shipping need.</div>
+          <button className="button12" onClick={navigateToAbout}>Learn More</button>
         </div>
         <div className="video-container">
           <video src={video} autoPlay loop muted playsInline className="full-screen-video" />
-          <div className="text">Secure Your Seals With Confidence</div>
+          <div className='desktopOverlay'></div>
+          <div className="texta">Secure Your Seals With Confidence</div>
           <div className='text2'>Reliable sealing solutions for every shipping need.</div>
         </div>
       </Slider>
