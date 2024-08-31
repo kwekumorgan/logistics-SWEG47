@@ -51,12 +51,17 @@ const Header = () => {
         <button className="sign-in-button">Sign In</button>
       </Link>
 
+
+      
+      <Link to="/Carts">
+        Carts
+      </Link>
       <div className='cart-container'> <Link to="/Carts" className="cart-text-link">
         <img src={CartIcon} alt="Cart" className="cart-icon" />
         {totalQuantity > 0 && (
           <span className="cart-count">{totalQuantity}</span>
         )}
-        Carts
+       
       </Link>
       </div>
       <div className="search-container">

@@ -107,7 +107,7 @@
     bottom: 10px; /* Align button at the bottom with some padding */
     left: 50%;
     transform: translateX(-50%);
-    transition: all 0.2s ease; /* Smooth transition for press effect */
+    transition: all 0.2s  ease-in-out; /* Smooth transition for press effect */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Default shadow */
 
   }
@@ -118,9 +118,9 @@
   }
   
   .button32:active {
-    color: #0077BC;
+    color: #15ABFF;
     background: #FFFFFF;
-    transform: translateX(-50%) translateY(2px); /* Move button down slightly */
+    transform: translateX(-50%) translateY(5px); /* Move button down slightly */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2) inset; /* Inset shadow to simulate press */
     padding-top: 2px; /* Adjust padding to make button look pressed */
 

@@ -68,11 +68,12 @@
 
 /* Search Container */
 .search-container {
-  margin-left: auto;
+  margin-left: 0px;
   display: flex;
   align-items: center;
   width: 40%;
   position: relative;
+  margin-right: -30px;
 }
 
 .search-input {
@@ -102,6 +103,7 @@
   justify-content: center;
   height: 100%;
   width: 30px;
+  
 }
 
 .search-button img {
@@ -120,10 +122,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: 5px;
+  margin-left: 500px;
   border: 1px white;
   height: 40px; /* Match the height of the sign-in button */
-  padding: 6px 8px; /* Same padding as sign-in button */
+  padding: 6px 7px; /* Same padding as sign-in button */
   
 }
 
@@ -138,8 +140,8 @@
 
 .cart-count {
   position: absolute;
-  top: -8px; /* Adjust to align properly within the cart icon */
-  right: 76px; /* Adjust to align with the cart icon */
+  top: -9px; /* Adjust to align properly within the cart icon */
+  right: 36px; /* Adjust to align with the cart icon */
 
   color: #15abff;
   font-size: 17px;
