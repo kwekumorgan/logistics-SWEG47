@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Payment.css';
-
+// 
 const PaymentPage = () => {
   const [sameAsBilling, setSameAsBilling] = useState(true);
 
