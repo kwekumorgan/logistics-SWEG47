@@ -95,7 +95,7 @@
     .textbox input {
         width: 100%; /* Maintains full width */
         height: 40px; /* Maintains height */
-        font-size: 13px; /* Consistent font size */
+        font-size: 16px; /* Consistent font size */
         box-sizing: border-box; /* Ensures the width remains consistent when clicked */
     }
     .textbox .icon {

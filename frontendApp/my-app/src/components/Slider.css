@@ -151,7 +151,7 @@ video::-webkit-media-controls-panel {
 }
 
 /* Hover */
-.button:hover {
+.button12:hover {
   color: #FFFFFFFF;
 
   background: #15abff;
@@ -159,13 +159,13 @@ video::-webkit-media-controls-panel {
 }
 
 /* Pressed */
-.button:hover:active {
+.button12:hover:active {
   color: #FFFFFFFF;
   background: #3F0EA6FF;
 }
 
 /* Disabled */
-.button:disabled {
+.button12:disabled {
   opacity: 0.4;
 }
 
