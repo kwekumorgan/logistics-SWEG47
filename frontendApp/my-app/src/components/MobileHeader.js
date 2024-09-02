@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './MobileHeader.css'; // Separate CSS file for mobile header
 import { Link } from 'react-router-dom';
 import { useCart } from './CartContext';
-import SearchIcon2 from '../Media/Search.png';
+import SearchIcon from '../Media/Search.png';
 import CartIcon from '../Media/carts1.png';
 import KashLogo from '../Media/KASHLOGO1.jpg';
 
@@ -36,7 +36,7 @@ const MobileHeader = () => {
     alert('Perform search operation');
   };
 
-  const handleKeyPress1 = (event) => {
+  const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleSearch1();
     }
@@ -57,17 +57,17 @@ const MobileHeader = () => {
         </Link>
       </div>
 
-      <div className="textbox">
+      <div className="search-container">
         <input
           type="text"
           className="search-input"
           placeholder="Search Products"
-          onKeyPress={handleKeyPress1}
+          onKeyPress={handleKeyPress}
         />
         <img
-          src={SearchIcon2}
+          src={SearchIcon}
           alt="Search"
-          className="icon left"
+          className="search-button"
           onClick={handleSearch1}
         />
       </div>
