@@ -64,16 +64,17 @@
 .sign-in-button:hover {
   background-color: white;
   color:  #15abff;
+  border: 1px solid #15abff;
 }
 
 /* Search Container */
 .search-container {
-  margin-left: 0px;
+  margin-left: 520px;
   display: flex;
   align-items: center;
   width: 40%;
   position: relative;
-  margin-right: -30px;
+  margin-right: -40px;
 }
 
 .search-input {
@@ -87,35 +88,28 @@
 }
 
 .search-input:focus {
-  border-color: #15ABFF;
+  border-color: rgb(28, 76, 138);
   outline: none;
 }
 
 .search-button {
   position: absolute;
-  right: 20px;
+  right: 0px;
   background: none; /* Ensure no background color is applied */
   border: none; /* Remove any border */
-  padding: 0;
+  padding: 22px 0px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20px;
+  height: auto;
   width: 20px;
-  
+}
+.search-button img {
+  width: 100%; /* Make the image fill the button */
+  height: auto; /* Maintain aspect ratio */
 }
 
-.search-button img {
-  width: 20px;
-  height: 20px;
-  margin-left: 20px;
-  position: absolute;
-  border: none;
-  
- 
- 
-}
 
 
 /* Cart Container */
@@ -123,19 +117,21 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: 500px;
+  margin-left: -12px;
   border: 1px white;
   height: 40px; /* Match the height of the sign-in button */
   padding: 6px 7px; /* Same padding as sign-in button */
   
 }
 
-.cart-icon {
+.cart-icon1 {
   width: 27px;
   height: 24px; /* Ensure square icon */
   cursor: pointer;
-  margin-right: 5px;
+  margin-left: -10px;
   position: relative;
+  padding: 15px 0;
+  top: -2px;
  
 }
 
@@ -158,7 +154,7 @@
   align-items: center;
   text-decoration: none;
   color: rgb(28, 76, 138);
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .cart-text-link:hover {
@@ -175,6 +171,7 @@
   .search-container {
     width: 100%;
     margin-top: 10px;
+    margin-left: 0;
   }
 
   .cart-container {
@@ -189,7 +186,22 @@
     padding: 2px 4px;
   }
 
-  .search-input {
+  .search-button {
+    position: absolute;
+    right: 20px;
+    background: none; /* Ensure no background color is applied */
+    border: none; /* Remove any border */
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    
+  }
+
+  .search-input{
     border-radius: 4px;
   }
 }
@@ -240,9 +252,18 @@
    
 }
 
-.search-input {
+.search-button {
+ 
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  
+}
+
+.search-input{
   border-radius: 4px;
 }
+
 
  
 }

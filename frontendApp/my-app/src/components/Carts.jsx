@@ -2,11 +2,10 @@ import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
 import "./Header.css";
-import KashLogo from '../Media/KASHLOGO1.jpg';
 import "./Carts.css";
-import SearchIcon from '../Media/Search.png';
 import product_data from '../components/product_data';
-import CartIcon from '../Media/carts1.png';
+import MobileHeader from '../components/MobileHeader';
+import Header from '../components/Header'
 
 const regionLocations = {
   'Greater Accra': ['Accra', 'Tema', 'Madina'],
@@ -31,25 +30,46 @@ const regionLocations = {
   const Carts = () => {
     const { cart, removeFromCart, changeQuantity } = useCart();
     const [locations, setLocations] = useState([]);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   
     useEffect(() => {
       function handleScroll() {
         const header = document.querySelector('.header');
-        const navbarHeight = document.querySelector('.ribbon').offsetHeight || 0; // fallback if ribbon doesn't exist
-        if (window.scrollY > navbarHeight) {
-          header.classList.add('fixed-header');
-        } else {
-          header.classList.remove('fixed-header');
+        const navbarHeight = document.querySelector('.ribbon')?.offsetHeight || 0; // Safe navigation with optional chaining
+    
+        if (header) {
+          if (window.scrollY > navbarHeight) {
+            header.classList.add('fixed-header');
+          } else {
+            header.classList.remove('fixed-header');
+          }
         }
       }
-  
+    
       window.addEventListener('scroll', handleScroll);
-  
+    
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
-  
+
+    // Scroll to the top of the page when the component is mounted
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+    
 
   
   
@@ -63,16 +83,9 @@ const regionLocations = {
     setLocations(regionLocations[region] || []);
   };
 
-  const handleSearch = () => {
-    alert('Perform search operation');
-  };
+ 
 
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      handleSearch();
-    }
-  };
-  
+ 
 
   // Get categories of items in the cart
   const cartCategories = [...new Set(cart.map(item => item.category))];
@@ -85,45 +98,12 @@ const regionLocations = {
     return cartCategories.includes(product.category); // Show products from the same categories
   });
 
-  // Calculate total quantity in the cart
-  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-
+  
   return (
+    <div>
+    {isMobile ? <MobileHeader /> : <Header />}
     <div className="main_content-custom">
-        <header className="header">
-      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
-      <Link to="/">Home</Link>
-
-      <Link to="/login">
-        <button className="sign-in-button">Sign In</button>
-      </Link>
-
-
-      
-      <Link to="/Carts">
-        Carts
-      </Link>
-      <div className='cart-container'> <Link to="/Carts" className="cart-text-link">
-        <img src={CartIcon} alt="Cart" className="cart-icon" />
-        {totalQuantity > 0 && (
-          <span className="cart-count">{totalQuantity}</span>
-        )}
        
-      </Link>
-      </div>
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search"
-          onKeyPress={handleKeyPress}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          <img src={SearchIcon} alt="Search" />
-        </button>
-      </div>
-      
-    </header>
 
       <div className="cart-content-custom">
         <div className="card-container-custom">
@@ -205,6 +185,7 @@ const regionLocations = {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

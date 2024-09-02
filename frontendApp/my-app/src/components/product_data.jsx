@@ -170,7 +170,7 @@ const product_data = {
         thumb: require('../Media/p4.jpg'),
       },
       {
-        id: 3,
+        id: 21,
         product_name: "Plastic Seal 1",
         description: "Versatile plastic seal...",
         price: 150,
@@ -178,7 +178,7 @@ const product_data = {
         thumb: require('../Media/p4.jpg'),
       },
       {
-        id: 3,
+        id: 22,
         product_name: "Plastic Seal 1",
         description: "Versatile plastic seal...",
         price: 150,
@@ -186,7 +186,7 @@ const product_data = {
         thumb: require('../Media/p4.jpg'),
       },
       {
-        id: 3,
+        id: 23,
         product_name: "Plastic Seal 1",
         description: "Versatile plastic seal...",
         price: 150,
@@ -194,7 +194,7 @@ const product_data = {
         thumb: require('../Media/p3.jpg'),
       },
       {
-        id: 3,
+        id: 24,
         product_name: "Plastic Seal 1",
         description: "Versatile plastic seal...",
         price: 150,
@@ -202,7 +202,7 @@ const product_data = {
         thumb: require('../Media/p3.jpg'),
       },
       {
-        id: 3,
+        id: 25,
         product_name: "Plastic Seal 1",
         description: "Versatile plastic seal...",
         price: 150,

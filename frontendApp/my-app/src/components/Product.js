@@ -10,11 +10,20 @@ const TextBox = () => {
     navigate(`/product/${product.id}`); // Navigate to the ProductDetailPage
   };
 
-  const renderCategory = (category) => (
-    <div className="category-section" key={category.name}>
-      <h2>{category.name}</h2>
+  // Combine all products from different categories into one array
+  const combinedProducts = [
+    ...product_data.boltSeals,
+    ...product_data.cableSeals,
+    ...product_data.plasticSeals,
+  ];
+
+  // Shuffle the combined products array
+  const shuffledProducts = combinedProducts.sort(() => Math.random() - 0.5);
+
+  return (
+    <div className="text-box-container">
       <div className="category-products">
-        {category.products.map(product => (
+        {shuffledProducts.map(product => (
           <div className="text-box" key={product.id} onClick={() => handleImageClick(product)}>
             <img src={product.thumb} alt={product.product_name} />
             <div className="product-description">{product.product_name}</div>
@@ -22,14 +31,6 @@ const TextBox = () => {
           </div>
         ))}
       </div>
-    </div>
-  );
-
-  return (
-    <div className="text-box-container">
-      {renderCategory({ name: '', products: product_data.boltSeals })}
-      {renderCategory({ name: '', products: product_data.cableSeals })}
-      {renderCategory({ name: '', products: product_data.plasticSeals })}
     </div>
   );
 };

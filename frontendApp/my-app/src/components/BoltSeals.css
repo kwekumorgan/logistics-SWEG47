@@ -1,0 +1,250 @@
+.nd-container12 {
+    position: relative; /* Relative to its parent container */
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding around the container */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    margin: 0 auto; /* Center the container */
+    border-radius: 0;
+ 
+  }
+  
+  /* Featured Products Text */
+  .featuredP-text12 {
+    font-family: Lexend, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #000000;
+    margin-left: -1px;
+    text-align: left;
+    margin-top: 20px;
+
+
+   
+  }
+  
+  .product-list12 {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to the next line */
+    justify-content: space-between; /* Even spacing between products */
+    gap: 10px; /* Space between product containers */
+  }
+  
+  /* Product Container */
+  .Products-container321 {
+    width: calc(50% - 10px); /* Default: 2 products per row */
+    box-sizing: border-box; /* Include padding and border in width */
+    background-color: #fff; /* White background */
+    padding: 10px; /* Padding inside each product container */
+    border: 1px solid #ddd; /* Optional: Border around each product container */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center-align the text */
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Ensure content is spaced evenly */
+  position: relative; /* Allow absolute positioning within the container */
+
+  
+  }
+  .products-container321 {
+  margin-top: 20px;
+  text-align: center;
+  justify-content: left;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #E8E8E8;
+}
+  
+  .image12 {
+    width: 100%;
+    height: 180px;
+    object-fit: fill; /* Maintain aspect ratio */
+    border-radius: 15px;
+    border-radius: 10px; /* Rounded corners for the image */
+  }
+  
+  .Products-container321 .product-name12,
+  .Products-container321 .product-description12,
+  .Products-container321 .product-price12 {
+    font-family: Manrope, sans-serif;
+    margin: 12px; /* Margin for spacing */
+  }
+  
+  .Products-container321 .product-name12 {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #171A1F;
+    text-align: center;
+  }
+  
+  .Products-container321 .product-description12 {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  
+  .Products-container321 .product-price12 {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #9095A1;
+  }
+  
+  .button321 {
+    width: 100%; 
+    height: 30px;
+    margin-top: 10px;
+    padding: 0 8px;
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #15ABFF;
+    background: #FFFFFF;
+    border-radius: 3px;
+    border: 1px solid #15ABFF;
+    cursor: pointer;
+    position: absolute; /* Position button at the bottom */
+    bottom: 10px; /* Align button at the bottom with some padding */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.2s  ease-in-out; /* Smooth transition for press effect */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Default shadow */
+
+  }
+  
+  .button321:hover {
+    color: #FFFFFF;
+    background: #0077BC;
+  }
+  
+  .button321:active {
+    color: #15ABFF;
+    background: #FFFFFF;
+    transform: translateX(-50%) translateY(5px); /* Move button down slightly */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2) inset; /* Inset shadow to simulate press */
+    padding-top: 2px; /* Adjust padding to make button look pressed */
+
+  }
+  
+  .button321:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+/* Responsive Design */
+
+/* For screens of 768px and below */
+@media (max-width: 768px) {
+    .button321 {
+        width: 80%;
+        height: 35px;
+        font-size: 14px;
+        margin-top: 60px; /* Add some margin to create spacing */
+        
+        
+    }
+}
+
+/* For screens of 480px and below */
+@media (max-width: 480px) {
+    .button321 {
+        width: 80%;
+        height: 40px;
+        font-size: 16px;
+        margin-bottom: 10px; /* Add some margin to create spacing */
+    }
+}
+
+  /* Responsive Design */
+  
+  /* For screens of 768px and below */
+  @media (max-width: 768px) {
+
+    .image12 {
+        width: 100%;
+        height: 160px;
+        object-fit: fill; /* Maintain aspect ratio */
+        border-radius: 15px;
+        border-radius: 10px; /* Rounded corners for the image */
+      }
+
+    
+    .Products-container321 {
+      width: calc(50% - 10px); /* 2 products per row */
+      height: 380px;
+      margin-bottom: 10px; /* Add space between product rows */
+      
+    }
+    .Products-container321 .product-description12 {
+        font-size: 12px;
+        line-height: 30px;
+        font-weight: 400;
+        margin-left: -65px;
+        line-height: 10px;
+        margin-top: 30px;
+      }
+      .Products-container321 .product-name12{
+        margin-left: -120px;
+        line-height: 10px;
+      }
+
+      .Products-container321 .product-price12 {
+        font-size: 12px;
+        line-height: 50px;
+        font-weight: 400;
+        color: #9095A1;
+        text-align: left;
+        margin-left: -140px;
+        margin-bottom: 50px;
+      }
+  }
+  
+  /* For screens of 480px and below */
+  @media (max-width: 480px) {
+    .Products-container321 {
+        width: calc(50% - 5px); /* 2 products per row */
+        height: 330px;
+      margin-bottom: 10px; /* Add space between product rows */
+    }
+
+    .image12 {
+        width: 140px;
+        height: 122px;
+        object-fit: fill; /* Maintain aspect ratio */
+        border-radius: 15px;
+        border-radius: 10px; /* Rounded corners for the image */
+      }
+      
+
+    .Products-container321 .product-description12 {
+        font-size: 11px;
+        line-height: -10px;
+        font-weight: 400;
+        margin-left: 15px;
+        margin-top: 15px;
+        text-align: left;
+      }
+      .Products-container321 .product-name12{
+        margin-left: -30px;
+        font-size: 15px;
+        line-height: 10px;
+        text-align: left;
+      }
+
+      .Products-container321 .product-price12 {
+        font-size: 12px;
+        line-height: 25px;
+        font-weight: 300;
+        color: #9095A1;
+        text-align: left;
+        margin-left: -58px;
+        margin-bottom: 180px;
+      }
+  }
+    
+
+ 
