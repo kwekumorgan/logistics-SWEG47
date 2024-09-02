@@ -1,86 +1,62 @@
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect} from 'react';
 import './Header.css';
-import KashLogo from '../Media/KASHLOGO1.jpg';
-import React, { useEffect } from 'react';
 import './About.css'; // Import the CSS file specific to the About page
-import SearchIcon from '../Media/Search.png';
-import CartIcon from '../Media/carts1.png';
-import { useCart } from '../components/CartContext';
+import MobileHeader from '../components/MobileHeader';
+import Header from '../components/Header'
+
 
 
 
 const AboutPage = () => {
-  const { cart } = useCart();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     function handleScroll() {
       const header = document.querySelector('.header');
-      if (window.scrollY > 0) {
-        header.style.position = 'fixed';
-        header.style.top = '0';
-      } else {
-        header.style.position = 'relative';
-        header.style.top = '';
+      const navbarHeight = document.querySelector('.ribbon')?.offsetHeight || 0; // Safe navigation with optional chaining
+  
+      if (header) {
+        if (window.scrollY > navbarHeight) {
+          header.classList.add('fixed-header');
+        } else {
+          header.classList.remove('fixed-header');
+        }
       }
     }
-
+  
     window.addEventListener('scroll', handleScroll);
-
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+   // Scroll to the top of the page when the component is mounted
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
 
-  const handleSearch = () => {
-    alert('Perform search operation');
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      handleSearch();
-    }
-  };
 
  
 
-  // Calculate the total quantity in the cart
-  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  
 
   return (
     <div>
-       <header className="header">
-      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
-      <Link to="/">Home</Link>
-
-      <Link to="/login">
-        <button className="sign-in-button">Sign In</button>
-      </Link>
-
-
-      
-      <Link to="/Carts">
-        Carts
-      </Link>
-      <div className='cart-container'> <Link to="/Carts" className="cart-text-link">
-        <img src={CartIcon} alt="Cart" className="cart-icon" />
-        {totalQuantity > 0 && (
-          <span className="cart-count">{totalQuantity}</span>
-        )}
-       
-      </Link>
-      </div>
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search"
-          onKeyPress={handleKeyPress}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          <img src={SearchIcon} alt="Search" />
-        </button>
-      </div>
-      
-    </header>
+      {isMobile ? <MobileHeader /> : <Header />}
+     
       <div className="about-container">
         <div className="about-box">
           <p>

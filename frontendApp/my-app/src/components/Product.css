@@ -35,7 +35,7 @@
 
 .category-products {
   display: flex;
-  flex-wrap: nowrap; /* Maintain horizontal scrolling on large screens */
+  flex-wrap: wrap; /* Maintain horizontal scrolling on large screens */
   overflow-x: auto; /* Enable horizontal scrolling */
   scroll-behavior: smooth;
   padding-bottom: 10px;
@@ -51,7 +51,7 @@
   border-radius: 0px;
   overflow: hidden;
   flex: 0 0 30%; /* Adjust to show 5 products in one screen */
-  max-width: 18.5%; /* Adjust to 20% for 5 products */
+  max-width: 18%; /* Adjust to 20% for 5 products */
   margin: 8px;
   height: auto;
   padding: 10px;

@@ -1,24 +1,55 @@
-/* AboutPage.css */
 .about-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    background-color: #f4f4f4; /* Light background color for contrast */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add padding to prevent text from touching the screen edges */
+  min-height: 100vh; /* Minimum height to cover the viewport */
+
+}
+
+.about-box {
+  background-color: #ffffff; /* White background for the text box */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the text box */
+  max-width: 800px; /* Maximum width of the text box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for visual effect */
+  text-align: center; /* Center text alignment */
+  margin: 20px; /* Margin to prevent the box from sticking to the edges on smaller screens */
+}
+
+.about-box p {
+  margin-bottom: 15px; /* Space between paragraphs */
+  font-size: 16px; /* Font size for readability */
+  color: #333; /* Dark color for text */
+}
+
+@media (max-width: 768px) {
   .about-box {
-    background-color: #ffffff; /* White background for the text box */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Padding inside the text box */
-    max-width: 800px; /* Maximum width of the text box */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for visual effect */
-    text-align: center; /* Center text alignment */
+    max-width: 600px; /* Adjust max-width for tablet and smaller screens */
+    padding: 15px; /* Reduce padding */
+    font-size: 14px; /* Smaller font size for better readability */
+    margin-top: 40px;
   }
-  
-  .about-box p {
-    margin-bottom: 15px; /* Space between paragraphs */
-    font-size: 16px; /* Font size for readability */
-    color: #333; /* Dark color for text */
+
+  .about-container {
+    padding: 15px; /* Adjust padding for better layout on smaller screens */
+ 
   }
+}
+
+@media (max-width: 480px) {
+  .about-box {
+    max-width: 100%; /* Use full width on mobile screens */
+    padding: 10px; /* Further reduce padding */
+    font-size: 14px; /* Smaller font size for readability */
+    margin: 0; /* Remove margin to utilize full screen width */
   
+  }
+
+  .about-container {
+    padding: 10px; /* Reduce padding for smaller screens */
+    margin-top: 40px;
+    margin-bottom: 50px;
+    
+  }
+}

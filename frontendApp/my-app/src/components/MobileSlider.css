@@ -108,7 +108,7 @@ body {
 @media (max-width: 480px) {
     .mobile-slider-wrapper {
       width: 100%;
-      height: 385px; /* Adjust height as needed */
+      height: 380px; /* Adjust height as needed */
       overflow: hidden;
     }
   

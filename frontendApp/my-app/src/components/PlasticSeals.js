@@ -1,22 +1,73 @@
-import React from 'react';
-import './Product.css'; // Ensure your CSS handles the styling
-import product_card from './product_data.jsx'; // Assuming PlasticSeals are part of the product data
+import React, { useState, useEffect} from 'react';
+import product_data from '../components/product_data';
+import './PlasticSeals.css'; // Import the CSS file
+import MobileHeader from '../components/MobileHeader';
+import Header from '../components/Header'
 
 const PlasticSeals = () => {
-  const plasticSeals = product_card.filter(product => product.category === 'PlasticSeals');
+  const filteredPlasticSeals = product_data.plasticSeals.filter((seal) => seal.price >= 150);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    function handleScroll() {
+      const header = document.querySelector('.header');
+      const navbarHeight = document.querySelector('.ribbon')?.offsetHeight || 0; // Safe navigation with optional chaining
+  
+      if (header) {
+        if (window.scrollY > navbarHeight) {
+          header.classList.add('fixed-header');
+        } else {
+          header.classList.remove('fixed-header');
+        }
+      }
+    }
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+   // Scroll to the top of the page when the component is mounted
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   return (
-    <div className="products-container">
-      <h1>Plastic Seals</h1>
-      <div className="text-box-container">
-        {plasticSeals.map(product => (
-          <div className="text-box" key={product.id}>
-            <img src={product.thumb} alt={product.product_name} />
-            <div className="product-description">{product.product_name}</div>
-            <div className="product-price">{product.currency} {product.price}</div>
-          </div>
-        ))}
+    <div>
+    {isMobile ? <MobileHeader /> : <Header />}
+    <div className="nd-container12">
+      <div className="featuredP-text12">Plastic Seals</div>
+      <div className="product-list12">
+        {filteredPlasticSeals.length > 0 ? (
+          filteredPlasticSeals.map((seal) => (
+            <div key={seal.id} className="Products-container321">
+              <img src={seal.thumb} alt={seal.product_name} className="image" />
+              <div className="product-name12">{seal.product_name}</div>
+              <div className="product-description12">{seal.description}</div>
+              <div className="product-price12">{`${seal.currency} ${seal.price}`}</div>
+              <button className="button321">Add to Cart</button>
+            </div>
+          ))
+        ) : (
+          <p>No products available.</p>
+        )}
       </div>
+    </div>
     </div>
   );
 };
