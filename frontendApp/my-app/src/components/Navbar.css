@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+
 /* Style for the navbar */
 .ribbon {
-  background:url(../Media/arno22.jpg);
+  background-color: rgb(2, 55, 102);
   background-size: cover;
   overflow: hidden;
   display: flex;
-  justify-content: center; /* Center the content horizontally */
+  gap: 250px; /* Adjust to space items between left and center */
   align-items: center; /* Center the content vertically */
-  height: 20px; /* Optional: Set a height for the ribbon */
+  padding: 10px 20px; /* Add padding for better spacing */
   z-index: 1000; /* Ensure the navbar stays above other content */
   position: relative;
 }
@@ -18,7 +19,6 @@
   margin: 0; /* Remove default margin */
   font-size: small;
   font-family: Lexend;
-
 }
 
 .ribbon a {
@@ -31,5 +31,29 @@
 
 .ribbon a:hover {
   background-color: #ddd;
-  color: black;
+  color: rgb(255, 246, 246);
+}
+
+/* New styles for the left side contact info */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icons and text */
+}
+
+.contact-info .icon {
+  margin-right: 5px;
+  color: white;
+}
+
+.vertical-line {
+  margin: 0 10px;
+  font-weight: bold;
+  color: white; /* Ensure vertical line color matches the navbar text */
 }

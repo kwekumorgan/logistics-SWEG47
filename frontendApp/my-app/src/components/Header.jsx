@@ -53,9 +53,7 @@ const Header = () => {
 
 
       
-      <Link to="/Carts">
-        Carts
-      </Link>
+      
       <div className='cart-container'> <Link to="/Carts" className="cart-text-link">
         <img src={CartIcon} alt="Cart" className="cart-icon" />
         {totalQuantity > 0 && (

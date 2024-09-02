@@ -56,7 +56,7 @@ const Footer = () => {
             <img src={instagramIcon} alt="Instagram" />
           </a>
         </div>
-        <p>&copy; 2023, Kash Logistics</p>
+        <p>&copy; 2024, Kash Logistics</p>
       </div>
     </footer>
   );
