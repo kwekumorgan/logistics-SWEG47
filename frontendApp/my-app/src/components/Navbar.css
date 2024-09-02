@@ -11,6 +11,7 @@
   padding: 10px 20px; /* Add padding for better spacing */
   z-index: 1000; /* Ensure the navbar stays above other content */
   position: relative;
+  height: 40px;
 }
 
 .ribbon h1 {
