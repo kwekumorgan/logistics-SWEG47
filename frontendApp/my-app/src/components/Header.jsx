@@ -4,7 +4,7 @@ import { useCart } from '../components/CartContext';
 import './Header.css';
 import KashLogo from '../Media/KASHLOGO1.jpg';
 import SearchIcon from '../Media/Search.png';
-import CartIcon from '../Media/carts1.png';
+import CartIcon1 from '../Media/carts1.png';
 ;
 
 
@@ -47,7 +47,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <img src={KashLogo} height="80" alt="Department Of Computer Science" />
+      <img src={KashLogo} height="80" alt="Kash logo" />
       <Link to="/">Home</Link>
 
       <Link to="/login">
@@ -57,8 +57,9 @@ const Header = () => {
 
       
       
-      <div className='cart-container'> <Link to="/Carts" className="cart-text-link">
-        <img src={CartIcon} alt="Cart" className="cart-icon" />
+      <div className='cart-container'>  <Link to="/Carts" className="cart-text-link">
+        Carts
+        <img src={CartIcon1} alt="Cart" className="cart-icon1" />
         {totalQuantity > 0 && (
           <span className="cart-count">{totalQuantity}
          

@@ -1,6 +1,6 @@
 .footer {
   font-family: 'Poppins', sans-serif;
-  background-color: rgb(4, 45, 83); /* Keep the background color */
+  background-color: rgb(28, 76, 138);
   color: #fcfdfd;
   padding: 40px 20px;
   display: flex;
@@ -104,4 +104,103 @@
 .footer-bottom p {
   margin: 0;
   font-size: 12px;
+}
+
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .footer-top {
+    flex-direction: column; /* Stack footer sections vertically */
+    align-items: center; /* Center the sections */
+   
+  }
+  
+  .footer-contact-info{
+    text-align: left;
+    margin-bottom: -150px;
+  }
+
+  .footer-account-links{
+    text-align: center;
+    margin-bottom: -150px;
+
+  }
+
+  .footer-links{
+    text-align: right;
+  }
+
+  .footer-contact-info, 
+  .footer-account-links, 
+  .footer-links, 
+  .footer-newsletter {
+    padding: 10px 0; /* Reduce padding for smaller screens */
+    min-width: 100%; /* Make each section take full width */
+  }
+
+  .footer-bottom {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center; /* Center-align footer text */
+  }
+}
+
+/* Styles for 480px screen width */
+@media screen and (max-width: 480px) {
+  .footer-top {
+    padding: 0px 2px;
+    text-align: center;
+  }
+
+  .footer-contact-info,
+  .footer-account-links,
+  .footer-links {
+    margin-bottom: 20px; /* Add spacing between sections */
+    font-size: 12px; /* Ensure consistent font size */
+    flex: none;
+    width: 100%;
+  }
+
+  .footer-contact-info h3,
+  .footer-account-links h3,
+  .footer-links h3 {
+    font-size: 8px; /* Set the same font size */
+  
+  }
+
+  .footer-contact-info {
+    font-size: 10px; /* Set the same font size */
+    margin-bottom: -127px;
+    margin-left: -40px;
+  }
+
+  .footer-account-links{
+    margin-bottom: -200px;
+    margin-top: 20px;
+  }
+  .footer-links  {
+    margin-top: 85px;
+  }
+
+  .footer-contact-info p,
+  .footer-account-links ul,
+  .footer-links ul {
+    font-size: 12px; /* Adjust paragraph and list item font size */
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-contact-info p {
+    text-align:left; /* Center the contact info */
+  }
+
+  .footer-account-links ul,
+  .footer-links ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  .footer-bottom {
+    padding-top: 15px;
+  }
 }
