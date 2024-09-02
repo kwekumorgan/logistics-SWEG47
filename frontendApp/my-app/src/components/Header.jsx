@@ -64,7 +64,7 @@ const Header = () => {
        
       </Link>
       </div>
-      <div className="search-container">
+      <div className="textbox">
         <input
           type="text"
           className="search-input"

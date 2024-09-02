@@ -58,9 +58,12 @@ const MobileHeader = () => {
       </div>
 
       <div className="textbox">
-        <input type="text"
-        onKeyPress={handleKeyPress1}
-         placeholder="Search Products" />
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search Products"
+          onKeyPress={handleKeyPress1}
+        />
         <img
           src={SearchIcon2}
           alt="Search"
