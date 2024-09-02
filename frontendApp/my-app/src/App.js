@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -14,6 +13,9 @@ import Carts from './components/Carts';
 import { CartProvider } from './components/CartContext';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
+import BoltSeals from './components/BoltSeals';
+import CableSeals from './components/CableSeals';
+import PlasticSeals from './components/PlasticSeals';
 import './App.css';
 
 const App = () => {
@@ -47,6 +49,10 @@ const App = () => {
           <Route path="/carts" element={<Carts />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
+          {/* Add routes for the category pages */}
+          <Route path="/bolt-seals" element={<BoltSeals />} />
+          <Route path="/cable-seals" element={<CableSeals />} />
+          <Route path="/plastic-seals" element={<PlasticSeals />} />
         </Routes>
         {/* Conditionally render Footer based on location */}
         {location.pathname !== '/login' && <Footer />}

@@ -5,9 +5,12 @@ import './Header.css';
 import KashLogo from '../Media/KASHLOGO1.jpg';
 import SearchIcon from '../Media/Search.png';
 import CartIcon from '../Media/carts1.png';
+;
+
 
 const Header = () => {
   const { cart } = useCart();
+  
 
   useEffect(() => {
     function handleScroll() {
@@ -57,21 +60,28 @@ const Header = () => {
       <div className='cart-container'> <Link to="/Carts" className="cart-text-link">
         <img src={CartIcon} alt="Cart" className="cart-icon" />
         {totalQuantity > 0 && (
-          <span className="cart-count">{totalQuantity}</span>
+          <span className="cart-count">{totalQuantity}
+         
+          </span>
+          
         )}
+        
        
       </Link>
       </div>
-      <div className="textbox">
+      <div className="search-container">
         <input
           type="text"
           className="search-input"
           placeholder="Search"
           onKeyPress={handleKeyPress}
         />
-        <button className="search-button" onClick={handleSearch}>
-          <img src={SearchIcon} alt="Search" />
-        </button>
+        <img
+          src={SearchIcon}
+          alt="Search"
+          className="search-button"
+          onClick={handleSearch}
+        />
       </div>
       
     </header>
