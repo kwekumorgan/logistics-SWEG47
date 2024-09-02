@@ -64,6 +64,11 @@ const regionLocations = {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
+
+    // Scroll to the top of the page when the component is mounted
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     
 
   
