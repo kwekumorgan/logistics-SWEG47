@@ -7,11 +7,15 @@ const Navbar = () => {
     <nav className="ribbon">
       <div className="navbar-left">
         <div className="contact-info">
-          <FaEnvelope className="icon" />
-          <span>contact@kashlogistics.com</span>
+          <a href="mailto:contact@kashlogistics.com" className="contact-link">
+            <FaEnvelope className="icon" />
+            <span>contact@kashlogistics.com</span>
+          </a>
           <span className="vertical-line">|</span>
-          <FaPhone className="icon" />
-          <span>+233 501 382 035</span>
+          <div className="phone-info">
+            <FaPhone className="icon" />
+            <span>+233 501 382 035</span>
+          </div>
         </div>
       </div>
       <h1>KASH LOGISTICS</h1>

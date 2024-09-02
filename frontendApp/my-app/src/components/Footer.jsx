@@ -21,7 +21,7 @@ const Footer = () => {
           <h3>ACCOUNT</h3>
           <ul>
             <li><Link to="/login">Log In</Link></li>
-            <li><Link to="/register">Sign In</Link></li>
+            <li><Link to="/register">Register</Link></li>
             <li><Link to="/forgot-password">Recovery Password</Link></li>
           </ul>
         </div>

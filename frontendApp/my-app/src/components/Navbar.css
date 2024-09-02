@@ -30,7 +30,7 @@
 }
 
 .ribbon a:hover {
-  background-color: #ddd;
+ text-decoration: underline;
   color: rgb(255, 246, 246);
 }
 
@@ -45,6 +45,7 @@
   display: flex;
   align-items: center;
   gap: 10px; /* Space between icons and text */
+  
 }
 
 .contact-info .icon {
@@ -57,3 +58,4 @@
   font-weight: bold;
   color: white; /* Ensure vertical line color matches the navbar text */
 }
+
