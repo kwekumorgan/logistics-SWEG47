@@ -2,7 +2,7 @@
 
 /* Style for the navbar */
 .ribbon {
-  background-color: rgb(2, 55, 102);
+  background-color: rgb(28, 76, 138);
   background-size: cover;
   overflow: hidden;
   display: flex;
@@ -11,7 +11,7 @@
   padding: 10px 20px; /* Add padding for better spacing */
   z-index: 1000; /* Ensure the navbar stays above other content */
   position: relative;
-  height: 40px;
+  height: 20px;
 }
 
 .ribbon h1 {
@@ -60,3 +60,42 @@
   color: white; /* Ensure vertical line color matches the navbar text */
 }
 
+/* Responsive styles for 768px screens */
+@media screen and (max-width: 768px) {
+  .ribbon {
+    flex-direction: column;
+    gap: 0px; /* Reduce gap for smaller screens */
+    padding: 2px 0; /* Adjust padding for smaller screens */
+  }
+
+  .contact-info,
+  .navbar-left {
+    display: none; /* Hide contact info for 768px screens */
+  }
+
+  .ribbon h1 {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Responsive styles for 480px screens */
+@media screen and (max-width: 480px) {
+  .ribbon {
+    flex-direction: column;
+    gap: 0px; /* Further reduce gap for very small screens */
+    padding: 0px 0; /* Adjust padding for very small screens */
+  }
+
+  .contact-info,
+  .navbar-left {
+    display: none; /* Hide contact info for 480px screens */
+  }
+
+  .ribbon h1 {
+    font-size: 12px; /* Further adjust font size for very small screens */
+    width: 100%;
+    text-align: center;
+  }
+}

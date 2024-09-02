@@ -80,7 +80,7 @@
 /* To prevent focus issues */
 .textbox input:focus {
     outline: none; /* Remove default focus outline */
-    border-color: #15ABFF; /* Border color change on focus */
+    border-color: rgb(28, 76, 138); /* Border color change on focus */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
 }
 
@@ -139,8 +139,8 @@
 
 /* Header Menu - Item Hover Effect */
 .header-menu .header-menu-item:hover {
-    color: #15ABFF; /* Text turns blue */
-    border-bottom: 4px solid #15ABFF; /* Bottom border turns blue */
+    color: rgb(28, 76, 138); /* Text turns blue */
+    border-bottom: 4px solid rgb(28, 76, 138); /* Bottom border turns blue */
 }
 
 /* Header Menu - Selected item */
